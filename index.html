@@ -440,6 +440,7 @@ footer a{text-underline-offset:3px}
    ============================================================ */
 const CONFIG = {
   ENDPOINT: "https://script.google.com/macros/s/AKfycbzt05MvvoZG4R8aBo0LdCmF9mCGx3Ij63v94k5qmoEyk5TCdGDE5X398Jg3wDRbxhtI/exec",                          // Google Apps Script 網頁應用程式網址（/exec 結尾）
+  OPEN: "2026-11-11T00:00:00+08:00",     // 開放下單時間
   DEADLINE: "2026-11-13T23:59:59+08:00", // 收單時間
   SHIPPING: 100,                         // 每筆訂單運費
   SIMULATOR_URL: "",                     // 模擬器網址，留空就不顯示那一塊
@@ -583,6 +584,7 @@ function orderId(){
 async function submit(e){
   e.preventDefault();
   if(Date.now() > new Date(CONFIG.DEADLINE).getTime()){ closeShop(); return; }
+  if(Date.now() < new Date(CONFIG.OPEN).getTime()) return;
   if(!validate()) return;
   const btn = $("#submit"), t = totals(), id = orderId();
   const data = {
@@ -630,11 +632,23 @@ function closeShop(){
 }
 
 function tick(){
-  const left = new Date(CONFIG.DEADLINE).getTime() - Date.now();
+  const now = Date.now(), p = n => String(n).padStart(2,"0");
+  const fmt = ms => `${Math.floor(ms/864e5)} 天 ${p(Math.floor(ms/36e5)%24)}:${p(Math.floor(ms/6e4)%60)}:${p(Math.floor(ms/1e3)%60)}`;
+  const toOpen = new Date(CONFIG.OPEN).getTime() - now;
+  const left = new Date(CONFIG.DEADLINE).getTime() - now;
+  const btn = $("#submit");
   if(left<=0){ closeShop(); return; }
-  const p = n => String(n).padStart(2,"0");
-  const d = Math.floor(left/864e5), h = Math.floor(left/36e5)%24, m = Math.floor(left/6e4)%60, s = Math.floor(left/1e3)%60;
-  $("#clock").textContent = `距離收單 ${d} 天 ${p(h)}:${p(m)}:${p(s)}`;
+  if(toOpen>0){
+    $("#clock").textContent = `距離開放下單 ${fmt(toOpen)}`;
+    $("#orderSub").textContent = "11/11 00:00 開放下單。現在可以先選組合、看金額，時間到再送出。";
+    btn.disabled = true; btn.textContent = "11/11 00:00 開放下單";
+  }else{
+    $("#clock").textContent = `距離收單 ${fmt(left)}`;
+    if(btn.textContent.includes("開放下單")){
+      $("#orderSub").textContent = "收單至 11/13（五）23:59。只提供宅配，每筆訂單運費 NT$100。";
+      btn.disabled = false; btn.textContent = "送出訂單";
+    }
+  }
   setTimeout(tick, 1000);
 }
 
