@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AIRLINE BOX 航空收納箱團購｜SMOOCH HOME</title>
+<meta name="description" content="SMOOCH HOME 航空收納箱團購，收單至 11/13。三種組合，可加購抽屜、輪子、酒架與飲料架。">
+<meta property="og:title" content="AIRLINE BOX 航空收納箱團購｜SMOOCH HOME">
+<meta property="og:description" content="鋁製航空收納箱，三種團購組合，收單至 11/13。">
+<meta property="og:image" content="images/cover.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --alu:#D9D9D9;      /* 封面的鋁灰 */
+  --alu-deep:#9DA1A4; /* 箱體陰影面 */
+  --paper:#F3F3F1;
+  --white:#FFFFFF;
+  --ink:#000000;
+  --mute:#5F6366;
+  --latch:#D4232B;    /* 只用在團購價與必填提示 */
+  --display:"Anton","Noto Sans TC",sans-serif;
+  --body:"Archivo","Noto Sans TC",system-ui,sans-serif;
+  --pad:clamp(20px,5vw,64px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--pad)}
+.band{padding:clamp(56px,9vw,120px) 0}
+.display{font-family:var(--display);font-weight:400;text-transform:uppercase;line-height:.95;letter-spacing:.005em}
+.h2{font-size:clamp(44px,9vw,104px)}
+.sub{color:var(--mute);font-size:15px;margin-top:10px}
+.head{margin-bottom:clamp(28px,4vw,48px)}
+
+/* ---------- 頂部收單列 ---------- */
+.gate{position:sticky;top:0;z-index:30;background:var(--ink);color:var(--white);font-size:13px}
+.gate .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;height:44px}
+.gate b{font-weight:500}
+.gate .clock{font-variant-numeric:tabular-nums;white-space:nowrap}
+.gate a{text-decoration:none;background:var(--white);color:var(--ink);padding:5px 14px;font-weight:700;white-space:nowrap}
+
+/* ---------- Hero ---------- */
+.hero{background:var(--alu)}
+.hero-grid{display:grid;grid-template-columns:1fr}
+.hero-art img{width:100%;height:auto}
+.hero-copy{padding:36px var(--pad) 56px;display:flex;flex-direction:column;justify-content:center;gap:22px}
+.hero-copy h1{font-size:clamp(40px,7vw,84px);color:var(--white)}
+.hero-copy p{max-width:30em}
+.fares{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.fares li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:12px 0;border-bottom:1px solid rgba(0,0,0,.35)}
+.fares .code{font-family:var(--display);font-size:22px;margin-right:10px}
+.fares s{color:var(--mute);font-size:13px;margin-right:8px}
+.fares strong{font-family:var(--display);font-weight:400;font-size:26px}
+.btn{display:inline-block;background:var(--ink);color:var(--white);border:0;padding:16px 28px;font-weight:700;font-size:16px;text-decoration:none;text-align:center}
+.btn:hover{background:#2b2b2b}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--white)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+@media(min-width:900px){
+  .hero-grid{grid-template-columns:minmax(0,46vw) 1fr;min-height:calc(100vh - 44px)}
+  .hero-art{display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+  .hero-art img{max-height:calc(100vh - 44px);width:auto}
+  .hero-copy{padding:48px var(--pad) 48px 40px}
+}
+
+/* ---------- 情境照 ---------- */
+.reel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--pad) 18px;scrollbar-width:thin}
+.reel img{height:clamp(300px,52vw,560px);width:auto;flex:none;scroll-snap-align:center}
+
+/* ---------- 尺寸 ---------- */
+.sizes{display:grid;gap:clamp(20px,4vw,48px)}
+.size{background:var(--white)}
+.size img{width:100%;aspect-ratio:1;object-fit:cover}
+.size .info{padding:22px 24px 26px}
+.size .letter{font-family:var(--display);font-size:72px;line-height:.9}
+.size dl{margin:14px 0 0;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-size:15px}
+.size dt{color:var(--mute)}
+.size dd{margin:0}
+@media(min-width:760px){.sizes{grid-template-columns:1fr 1fr}}
+
+.spec{width:100%;border-collapse:collapse;margin-top:clamp(28px,4vw,48px);font-size:15px}
+.spec caption{text-align:left;font-family:var(--display);font-size:28px;text-transform:uppercase;padding-bottom:10px}
+.spec th,.spec td{text-align:left;padding:12px 8px 12px 0;border-top:1px solid rgba(0,0,0,.25);font-weight:400}
+.spec td:last-child{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* ---------- 細節 ---------- */
+.alu{background:var(--alu)}
+.details{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.details figure{margin:0}
+.details img{width:100%;aspect-ratio:1;object-fit:cover}
+.details figcaption{padding:10px 0 14px;font-size:14px;line-height:1.5}
+.details b{display:block;font-family:var(--display);font-weight:400;font-size:20px;text-transform:uppercase}
+@media(min-width:900px){.details{grid-template-columns:repeat(4,1fr)}}
+
+.duo{display:grid;gap:clamp(20px,4vw,48px);margin-top:clamp(40px,6vw,80px)}
+.duo figure{margin:0;background:var(--white)}
+.duo img{width:100%;aspect-ratio:1;object-fit:cover}
+.duo figcaption{padding:20px 24px 24px}
+.duo .name{font-family:var(--display);font-size:34px;text-transform:uppercase;line-height:1}
+.duo .tag{display:inline-block;background:var(--ink);color:var(--white);font-size:12px;font-weight:700;padding:2px 8px;margin-bottom:10px}
+@media(min-width:760px){.duo{grid-template-columns:repeat(3,1fr)}}
+
+.sim{margin-top:clamp(40px,6vw,72px);background:var(--ink);color:var(--white);padding:clamp(24px,4vw,44px);display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+.sim .display{font-size:clamp(28px,4.5vw,48px)}
+.sim .btn{background:var(--white);color:var(--ink)}
+
+/* ---------- 購買前須知 ---------- */
+.notes{background:var(--ink);color:var(--white)}
+.notes .sub{color:#B9BCBE}
+.marks{display:grid;gap:22px}
+.marks figure{margin:0}
+.marks img{width:100%;aspect-ratio:1;object-fit:cover}
+.marks figcaption{padding-top:12px;font-size:15px}
+.marks b{display:block;font-family:var(--display);font-weight:400;font-size:22px;text-transform:uppercase}
+@media(min-width:760px){.marks{grid-template-columns:repeat(3,1fr)}}
+
+/* ---------- 下單 ---------- */
+.shop{display:grid;gap:36px;align-items:start}
+@media(min-width:980px){.shop{grid-template-columns:minmax(0,1fr) 380px}.pass-col{position:sticky;top:64px}}
+.group-title{font-family:var(--display);font-size:30px;text-transform:uppercase;margin:0 0 6px;font-weight:400}
+.group-note{color:var(--mute);font-size:14px;margin-bottom:14px}
+.item{display:grid;grid-template-columns:92px 1fr;gap:16px;background:var(--white);padding:14px;margin-bottom:10px;align-items:center}
+.item img{width:92px;height:92px;object-fit:cover}
+.item.set{grid-template-columns:120px 1fr}
+.item.set img{width:120px;height:120px}
+.item .code{font-family:var(--display);font-size:24px;line-height:1}
+.item .name{font-weight:500;line-height:1.45}
+.item .meta{color:var(--mute);font-size:13px;line-height:1.5}
+.item .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap}
+.price s{color:var(--mute);font-size:13px;margin-right:6px}
+.price strong{font-family:var(--display);font-weight:400;font-size:24px;color:var(--latch)}
+.price.plain strong{color:var(--ink);font-size:20px}
+.qty{display:inline-flex;align-items:center;box-shadow:inset 0 0 0 1.5px var(--ink)}
+.qty button{width:40px;height:40px;background:none;border:0;font-size:20px;line-height:1}
+.qty button:disabled{opacity:.25;cursor:not-allowed}
+.qty output{min-width:30px;text-align:center;font-variant-numeric:tabular-nums;font-weight:700}
+.item.off{opacity:.5}
+.hint{background:#FFF6D6;padding:10px 14px;font-size:14px;margin:6px 0 14px}
+.hint[hidden]{display:none}
+
+form .field{margin-bottom:16px}
+label.lbl{display:block;font-weight:500;font-size:14px;margin-bottom:6px}
+label.lbl i{font-style:normal;color:var(--latch)}
+input[type=text],input[type=tel],textarea{width:100%;font:inherit;padding:13px 14px;border:1.5px solid var(--ink);background:var(--white);border-radius:0}
+textarea{min-height:84px;resize:vertical}
+.err{color:var(--latch);font-size:13px;margin-top:4px;min-height:0}
+.check{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;background:var(--white);margin-bottom:8px;font-size:15px;cursor:pointer}
+.check input{width:20px;height:20px;margin-top:3px;flex:none;accent-color:#000}
+.rules{margin:0 0 20px;padding-left:1.2em;font-size:15px}
+.rules li{margin-bottom:4px}
+.submit{width:100%;font-size:18px;padding:18px}
+.submit:disabled{background:var(--alu-deep);cursor:not-allowed}
+.form-err{color:var(--latch);font-weight:500;margin-top:10px}
+
+/* ---------- 登機證 ---------- */
+.pass{background:var(--white);position:relative;filter:drop-shadow(0 10px 24px rgba(0,0,0,.14))}
+.pass-top{background:var(--ink);color:var(--white);padding:14px 20px;display:flex;justify-content:space-between;align-items:baseline}
+.pass-top .display{font-size:26px}
+.pass-top span{font-size:12px}
+.pass-body{padding:18px 20px 6px}
+.route{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;margin-bottom:14px}
+.route .big{font-family:var(--display);font-size:44px;line-height:.9}
+.route small{display:block;color:var(--mute);font-size:12px}
+.route .plane{flex:1;border-bottom:2px dashed var(--alu-deep);margin:0 6px 12px}
+.pass-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;font-size:13px;margin-bottom:12px}
+.pass-fields small{display:block;color:var(--mute);font-size:11px}
+.pass-fields b{font-weight:700;word-break:break-all}
+.lines{list-style:none;margin:0;padding:10px 0;border-top:1px solid var(--alu);font-size:14px}
+.lines li{display:flex;justify-content:space-between;gap:12px;padding:3px 0}
+.lines li span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
+.lines .empty{color:var(--mute)}
+.tear{position:relative;border-top:2px dashed var(--alu-deep);margin:0 14px}
+.tear::before,.tear::after{content:"";position:absolute;top:-12px;width:22px;height:22px;border-radius:50%;background:var(--paper)}
+.tear::before{left:-26px}.tear::after{right:-26px}
+.pass-total{padding:14px 20px 18px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+.pass-total small{display:block;color:var(--mute);font-size:12px}
+.pass-total strong{font-family:var(--display);font-weight:400;font-size:40px;line-height:1}
+.barcode{height:44px;width:120px;background:repeating-linear-gradient(90deg,#000 0 2px,transparent 2px 5px,#000 5px 6px,transparent 6px 10px,#000 10px 13px,transparent 13px 15px)}
+
+/* ---------- 完成畫面 ---------- */
+.done{position:fixed;inset:0;z-index:50;background:var(--alu);overflow:auto;padding:28px 16px 60px}
+.done[hidden]{display:none}
+.done-inner{max-width:440px;margin:0 auto}
+.done h2{font-size:clamp(48px,13vw,76px);color:var(--white);margin-bottom:6px}
+.done .pass .tear::before,.done .pass .tear::after{background:var(--alu)}
+.pay{background:var(--white);padding:18px 20px;margin-top:18px;font-size:15px}
+.pay h3{font-family:var(--display);font-weight:400;font-size:24px;margin-bottom:6px}
+.pay ol{margin:0;padding-left:1.2em}
+.pay .bank{background:var(--paper);padding:10px 12px;margin:8px 0;font-variant-numeric:tabular-nums}
+.demo{background:#FFF6D6;padding:10px 14px;font-size:14px;margin-bottom:14px}
+.done .btn{width:100%;margin-top:14px}
+
+/* ---------- 頁尾 ---------- */
+.lottery{background:var(--alu);padding:clamp(36px,6vw,64px) 0}
+.lottery .display{font-size:clamp(32px,6vw,60px)}
+footer{background:var(--ink);color:var(--white);padding:36px 0 96px;font-size:14px}
+footer .display{font-size:32px}
+footer a{text-underline-offset:3px}
+
+/* ---------- 手機底部列 ---------- */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:25;background:var(--white);border-top:2px solid var(--ink);padding:10px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.dock[hidden]{display:none}
+.dock strong{font-family:var(--display);font-weight:400;font-size:26px}
+.dock small{display:block;color:var(--mute);font-size:12px;line-height:1.2}
+.dock .btn{padding:12px 20px}
+@media(min-width:980px){.dock{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="gate">
+  <div class="wrap">
+    <span><b>航空收納箱團購</b>　<span class="clock" id="clock">收單至 11/13 23:59</span></span>
+    <a href="#order">我要下單</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-grid">
+    <div class="hero-art"><img src="images/cover.jpg" alt="AIRLINE 航空收納箱，大小兩個尺寸的鋁製收納箱" width="1273" height="1800"></div>
+    <div class="hero-copy">
+      <h1 class="display">Industrial form,<br>everyday storage.</h1>
+      <p>機艙裡的鋁製餐車箱，搬進家裡當邊桌、床頭櫃、香水櫃。抽屜自己配，大尺寸還能加輪子推著走。</p>
+      <ul class="fares">
+        <li><span><span class="code">SET 01</span>小箱＋塑膠抽屜 ×1</span><span><s>NT$3,150</s><strong>2,790</strong></span></li>
+        <li><span><span class="code">SET 02</span>大箱＋塑膠抽屜 ×2</span><span><s>NT$4,730</s><strong>4,290</strong></span></li>
+        <li><span><span class="code">SET 03</span>大箱＋塑膠抽屜 ×2＋輪子</span><span><s>NT$5,480</s><strong>4,990</strong></span></li>
+      </ul>
+      <div class="hero-actions">
+        <a class="btn" href="#order">選組合下單</a>
+        <a class="btn ghost" href="#size">先看尺寸</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="band" aria-label="生活場景">
+  <div class="wrap head">
+    <h2 class="display h2">In your space</h2>
+    <p class="sub">關上箱門時，不透光的箱體可以幫香水、化妝品避開陽光直射。</p>
+  </div>
+  <div class="reel" tabindex="0">
+    <img src="images/desk-1.jpg" alt="大尺寸航空箱放在書桌旁" loading="lazy">
+    <img src="images/blinds-1.jpg" alt="裝上輪子的大尺寸航空箱" loading="lazy">
+    <img src="images/desk-2.jpg" alt="航空箱當作邊桌，上面放著盒子" loading="lazy">
+    <img src="images/perfume-loewe.jpg" alt="鋁製抽屜裡放著香水" loading="lazy">
+    <img src="images/s-stove.jpg" alt="小尺寸航空箱放在檯面上" loading="lazy">
+    <img src="images/drawers-open.jpg" alt="拉開的鋁製小抽屜與塑膠大抽屜" loading="lazy">
+    <img src="images/blinds-2.jpg" alt="從上方看大尺寸航空箱" loading="lazy">
+  </div>
+</section>
+
+<section class="band" id="size" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="display h2">Size guide</h2>
+      <p class="sub">尺寸規格</p>
+    </div>
+    <div class="sizes">
+      <article class="size">
+        <img src="images/s-front.jpg" alt="小號箱" loading="lazy">
+        <div class="info">
+          <div class="letter">S</div>
+          <dl>
+            <dt>尺寸</dt><dd>長 40 × 寬 29 × 高 28 cm</dd>
+            <dt>可放</dt><dd>大抽屜 ×2，或大抽屜 ×1＋小抽屜 ×2</dd>
+            <dt>輪子</dt><dd>不可加裝</dd>
+          </dl>
+        </div>
+      </article>
+      <article class="size">
+        <img src="images/l-top.jpg" alt="大號箱" loading="lazy">
+        <div class="info">
+          <div class="letter">L</div>
+          <dl>
+            <dt>尺寸</dt><dd>長 41.5 × 寬 29 × 高 47 cm</dd>
+            <dt>可放</dt><dd>大抽屜 ×3＋小抽屜 ×1</dd>
+            <dt>輪子</dt><dd>可加裝</dd>
+          </dl>
+        </div>
+      </article>
+    </div>
+    <table class="spec">
+      <caption>Drawers 抽屜</caption>
+      <tr><th>鋁製大抽屜</th><td>37.8 × 27.4 × 10.5 cm</td></tr>
+      <tr><th>鋁製小抽屜</th><td>37.8 × 27.4 × 4.5 cm</td></tr>
+      <tr><th>塑料大抽屜（PP）</th><td>37.8 × 27.4 × 10.5 cm</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="band alu">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="display h2">Details</h2>
+      <p class="sub">機能細節</p>
+    </div>
+    <div class="details">
+      <figure><img src="images/perfume.jpg" alt="" loading="lazy"><figcaption><b>Flexible storage</b>香水、化妝品與日常物品收納</figcaption></figure>
+      <figure><img src="images/s-open.jpg" alt="" loading="lazy"><figcaption><b>Modular configuration</b>可依需求搭配不同抽屜</figcaption></figure>
+      <figure><img src="images/latch.jpg" alt="" loading="lazy"><figcaption><b>Simple latch</b>簡易鎖扣設計</figcaption></figure>
+      <figure><img src="images/plaque.jpg" alt="" loading="lazy"><figcaption><b>Fold-flat handle</b>嵌入式提把</figcaption></figure>
+    </div>
+
+    <div class="duo">
+      <figure>
+        <img src="images/caster.jpg" alt="附煞車的靜音萬向輪" loading="lazy">
+        <figcaption><div class="name">Swivel casters</div>靜音萬向輪，一組四顆，其中兩顆附煞車。只有大尺寸可以裝。</figcaption>
+      </figure>
+      <figure>
+        <img src="images/wine-rack.jpg" alt="酒架上橫放一瓶酒" loading="lazy">
+        <figcaption><span class="tag">新品</span><div class="name">Wine rack</div>酒架。酒瓶橫放，大小尺寸都能用。</figcaption>
+      </figure>
+      <figure>
+        <img src="images/drink-holder.jpg" alt="放在抽屜裡的 15 格飲料架" loading="lazy">
+        <figcaption><span class="tag">新品</span><div class="name">Drink holder</div>飲料架。15 格，孔徑 6 cm，大小尺寸都能用。</figcaption>
+      </figure>
+    </div>
+
+    <div class="sim" id="sim" hidden>
+      <div>
+        <div class="display">今天的推車要放什麼？</div>
+        <p>還沒想好抽屜怎麼配，先到模擬器排排看。</p>
+      </div>
+      <a class="btn" id="simLink" href="https://ss91705-ai.github.io/galley-cart/" target="_blank" rel="noopener">開啟模擬器</a>
+    </div>
+  </div>
+</section>
+
+<section class="band notes" id="notes">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="display h2">Please note</h2>
+      <p class="sub">購買前須知｜以下情況不列為商品瑕疵</p>
+    </div>
+    <div class="marks">
+      <figure><img src="images/mark-1.jpg" alt="把手周圍的氧化痕跡" loading="lazy"><figcaption><b>Natural material marks</b>材質特性可能出現局部氧化痕跡，屬正常現象，非瑕疵。</figcaption></figure>
+      <figure><img src="images/mark-2.jpg" alt="邊角的焊點" loading="lazy"><figcaption><b>Welding marks</b>焊接處可能有較明顯焊點，屬製程痕跡，非瑕疵。</figcaption></figure>
+      <figure><img src="images/mark-3.jpg" alt="表面的小凹痕" loading="lazy"><figcaption><b>Minor shipping marks</b>運送可能產生輕微小凹痕，請於購買前確認可接受。</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="order">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="display h2">Order</h2>
+      <p class="sub" id="orderSub">收單至 11/13（五）23:59。只提供宅配，每筆訂單運費 NT$100。</p>
+    </div>
+
+    <div id="closed" class="hint" hidden>這次團購已經收單，謝謝大家。之後的開團消息請追蹤 IG @smooch_home。</div>
+
+    <div class="shop" id="shop">
+      <form id="form" novalidate>
+        <h3 class="group-title">選組合</h3>
+        <p class="group-note">每個組合都含箱體和塑膠大抽屜。</p>
+        <div id="sets"></div>
+
+        <h3 class="group-title" style="margin-top:32px">加購</h3>
+        <p class="group-note">先選至少一個組合，才能加購。</p>
+        <div id="addons"></div>
+        <div class="hint" id="capHint" hidden></div>
+
+        <h3 class="group-title" style="margin-top:32px">收件資料</h3>
+        <div class="field"><label class="lbl" for="name">收件人姓名 <i>*</i></label><input type="text" id="name" autocomplete="name" required><div class="err" data-for="name"></div></div>
+        <div class="field"><label class="lbl" for="phone">手機號碼 <i>*</i></label><input type="tel" id="phone" inputmode="numeric" autocomplete="tel" placeholder="0912345678" required><div class="err" data-for="phone"></div></div>
+        <div class="field"><label class="lbl" for="address">宅配地址 <i>*</i></label><input type="text" id="address" autocomplete="street-address" placeholder="請填含縣市、區的完整地址" required><div class="err" data-for="address"></div></div>
+        <div class="field"><label class="lbl" for="ig">IG 帳號 <i>*</i></label><input type="text" id="ig" autocapitalize="off" autocomplete="off" placeholder="@your_ig" required><div class="err" data-for="ig"></div></div>
+        <div class="field"><label class="lbl" for="note">備註</label><textarea id="note"></textarea></div>
+
+        <h3 class="group-title" style="margin-top:32px">團購須知</h3>
+        <ul class="rules">
+          <li>收單至 11/13（五）23:59，收單後統一訂貨。</li>
+          <li>只提供宅配，每筆訂單運費 NT$100。</li>
+          <li>送出訂單後請完成匯款，並私訊 IG <a href="https://www.instagram.com/smooch_home/" target="_blank" rel="noopener">@smooch_home</a> 告知訂單編號與帳號後五碼。</li>
+          <li>團購商品下單後無法取消或更改。</li>
+        </ul>
+        <label class="check"><input type="checkbox" id="agreeNotes"><span>我已看過<a href="#notes">購買前須知</a>，接受氧化痕跡、焊點與運送小凹痕不算瑕疵。</span></label>
+        <label class="check"><input type="checkbox" id="agreeNoAbandon"><span>我確認不棄單，下單後會完成匯款。</span></label>
+
+        <button class="btn submit" type="submit" id="submit" style="margin-top:14px">送出訂單</button>
+        <div class="form-err" id="formErr" role="alert"></div>
+      </form>
+
+      <aside class="pass-col" aria-label="訂單明細">
+        <div class="pass" id="livePass"></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="lottery">
+  <div class="wrap">
+    <div class="display">三選二，抽好禮</div>
+    <p>雙 11 三個團購頁，在任兩頁下單就自動加入抽獎。</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="display">Airline box</div>
+    <p>SMOOCH HOME　<a href="https://smooch.tw" target="_blank" rel="noopener">smooch.tw</a>　IG <a href="https://www.instagram.com/smooch_home/" target="_blank" rel="noopener">@smooch_home</a></p>
+  </div>
+</footer>
+
+<div class="dock" id="dock" hidden>
+  <div><small id="dockCount"></small><strong id="dockTotal"></strong></div>
+  <a class="btn" href="#name">填收件資料</a>
+</div>
+
+<div class="done" id="done" hidden role="dialog" aria-modal="true" aria-labelledby="doneTitle">
+  <div class="done-inner">
+    <div class="demo" id="demoNote" hidden>測試模式：還沒設定訂單接收網址，這筆訂單沒有送出。</div>
+    <h2 class="display" id="doneTitle">Order received</h2>
+    <p style="margin-bottom:16px">訂單已送出。請截圖這張登機證，匯款後私訊我們。</p>
+    <div class="pass" id="donePass"></div>
+    <div class="pay">
+      <h3>接下來</h3>
+      <ol>
+        <li>匯款 <b id="payTotal"></b> 到以下帳戶：<div class="bank" id="bank"></div></li>
+        <li>私訊 IG <b>@smooch_home</b>，告訴我們訂單編號和帳號後五碼。</li>
+        <li>對帳完成就算下單成功。</li>
+      </ol>
+    </div>
+    <a class="btn" href="https://www.instagram.com/smooch_home/" target="_blank" rel="noopener">開啟 IG 私訊 @smooch_home</a>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   設定區：要改的東西都在這裡
+   ============================================================ */
+const CONFIG = {
+  ENDPOINT: "https://script.google.com/macros/s/AKfycbzt05MvvoZG4R8aBo0LdCmF9mCGx3Ij63v94k5qmoEyk5TCdGDE5X398Jg3wDRbxhtI/exec",                          // Google Apps Script 網頁應用程式網址（/exec 結尾）
+  DEADLINE: "2026-11-13T23:59:59+08:00", // 收單時間
+  SHIPPING: 100,                         // 每筆訂單運費
+  SIMULATOR_URL: "",                     // 模擬器網址，留空就不顯示那一塊
+  BANK: { name: "彰化銀行", code: "009", account: "22005113364100", holder: "", note: "團購" } // 銀行名稱、代碼、帳號、戶名；留空會請客人私訊索取
+};
+
+const SETS = [
+  { id:"set01", code:"SET 01", name:"小航空箱＋塑膠大抽屜 ×1", meta:"S 尺寸　40 × 29 × 28 cm", orig:3150, price:2790, img:"s-front", box:"S" },
+  { id:"set02", code:"SET 02", name:"大航空箱＋塑膠大抽屜 ×2", meta:"L 尺寸　41.5 × 29 × 47 cm", orig:4730, price:4290, img:"l-top", box:"L" },
+  { id:"set03", code:"SET 03", name:"大航空箱＋塑膠大抽屜 ×2＋輪子", meta:"L 尺寸，含可煞車萬向輪一組", orig:5480, price:4990, img:"blinds-1", box:"L" }
+];
+const ADDONS = [
+  { id:"alSmall", name:"小抽屜（鋁製）",   meta:"37.8 × 27.4 × 4.5 cm",  price:600, img:"drawers-open", units:1 },
+  { id:"alLarge", name:"大抽屜（鋁製）",   meta:"37.8 × 27.4 × 10.5 cm", price:780, img:"s-open",       units:2 },
+  { id:"ppLarge", name:"大抽屜（塑料 PP）", meta:"37.8 × 27.4 × 10.5 cm", price:590, img:"l-open",       units:2 },
+  { id:"wheels",  name:"可煞車萬向輪 1 組", meta:"四顆一組，僅 SET 02 可加（SET 03 已含）", price:750, img:"caster", units:0 },
+  { id:"wine",    name:"酒架",             meta:"大小尺寸都能用",          price:790, img:"wine-rack",    units:0 },
+  { id:"drink",   name:"飲料架",           meta:"15 格，孔徑 6 cm，大小尺寸都能用", price:790, img:"drink-holder", units:0 }
+];
+/* ============================================================ */
+
+const $ = s => document.querySelector(s);
+const nt = n => "NT$" + n.toLocaleString("en-US");
+const qty = {};
+[...SETS, ...ADDONS].forEach(p => qty[p.id] = 0);
+
+function el(tag, cls, text){ const e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
+
+function buildItem(p, isSet){
+  const box = el("div", "item" + (isSet ? " set" : "")); box.dataset.id = p.id;
+  const img = el("img"); img.src = `images/${p.img}.jpg`; img.alt = ""; img.loading = "lazy";
+  const body = el("div");
+  if(isSet) body.append(el("div","code",p.code));
+  body.append(el("div","name",p.name), el("div","meta",p.meta));
+  const row = el("div","row");
+  const price = el("div","price" + (isSet ? "" : " plain"));
+  if(isSet){ price.append(el("s",null,nt(p.orig))); }
+  price.append(el("strong",null,nt(p.price)));
+  const q = el("div","qty");
+  const minus = el("button",null,"−"); minus.type="button"; minus.setAttribute("aria-label",`減少 ${p.name}`);
+  const out = el("output",null,"0");
+  const plus = el("button",null,"+"); plus.type="button"; plus.setAttribute("aria-label",`增加 ${p.name}`);
+  minus.onclick = () => { qty[p.id] = Math.max(0, qty[p.id]-1); render(); };
+  plus.onclick  = () => { qty[p.id] = Math.min(maxOf(p.id), qty[p.id]+1); render(); };
+  q.append(minus,out,plus); row.append(price,q); body.append(row); box.append(img,body);
+  return box;
+}
+
+const setCount = () => SETS.reduce((n,s)=>n+qty[s.id],0);
+function maxOf(id){
+  if(SETS.some(s=>s.id===id)) return 20;
+  if(setCount()===0) return 0;
+  if(id==="wheels") return qty.set02;
+  return 20;
+}
+
+function lines(){
+  const out = [];
+  SETS.forEach(s => { if(qty[s.id]) out.push({label:`${s.code} ${s.name}`, n:qty[s.id], sum:qty[s.id]*s.price}); });
+  ADDONS.forEach(a => { if(qty[a.id]) out.push({label:`加購 ${a.name}`, n:qty[a.id], sum:qty[a.id]*a.price}); });
+  return out;
+}
+function totals(){
+  const sub = lines().reduce((n,l)=>n+l.sum,0);
+  const ship = sub>0 ? CONFIG.SHIPPING : 0;
+  return {sub, ship, total: sub+ship};
+}
+
+function passHTML(target, info){
+  target.textContent = "";
+  const top = el("div","pass-top"); top.append(el("div","display","Boarding pass"), el("span",null,"SMOOCH HOME"));
+  const body = el("div","pass-body");
+  const route = el("div","route");
+  const a = el("div"); a.append(el("small",null,"從"), el("div","big","SMH"));
+  const b = el("div"); b.style.textAlign="right"; b.append(el("small",null,"到"), el("div","big","HOME"));
+  route.append(a, el("div","plane"), b);
+  const f = el("div","pass-fields");
+  const field = (k,v) => { const d=el("div"); d.append(el("small",null,k), el("b",null,v)); return d; };
+  f.append(field("旅客", info.name || "—"), field("訂單編號", info.orderId || "送出後產生"),
+           field("航班", "SMH 1113"), field("收單", "11/13 23:59"));
+  const ul = el("ul","lines");
+  const ls = lines();
+  if(!ls.length){ ul.append(el("li","empty","還沒選組合")); }
+  ls.forEach(l => { const li=el("li"); li.append(el("span",null,`${l.label} × ${l.n}`), el("span",null,nt(l.sum))); ul.append(li); });
+  const t = totals();
+  if(t.sub){ const li=el("li"); li.append(el("span",null,"宅配運費"), el("span",null,nt(t.ship))); ul.append(li); }
+  body.append(route,f,ul);
+  const tot = el("div","pass-total");
+  const tl = el("div"); tl.append(el("small",null,"應付金額"), el("strong",null,nt(t.total)));
+  tot.append(tl, el("div","barcode"));
+  target.append(top, body, el("div","tear"), tot);
+}
+
+function render(){
+  // 加購數量不能超過上限（例如拿掉組合後）
+  ADDONS.forEach(a => { qty[a.id] = Math.min(qty[a.id], maxOf(a.id)); });
+  document.querySelectorAll(".item").forEach(box => {
+    const id = box.dataset.id, max = maxOf(id);
+    box.querySelector("output").textContent = qty[id];
+    const [minus, plus] = box.querySelectorAll("button");
+    minus.disabled = qty[id]===0; plus.disabled = qty[id]>=max;
+    box.classList.toggle("off", max===0);
+  });
+  // 抽屜容量提醒：小抽屜 1 格、大抽屜 2 格；S 共 4 格（組合已用 2），L 共 7 格（組合已用 4）
+  const free = qty.set01*2 + (qty.set02+qty.set03)*3;
+  const used = ADDONS.reduce((n,a)=>n+qty[a.id]*a.units,0);
+  const hint = $("#capHint");
+  if(used>free && setCount()>0){ hint.hidden=false; hint.textContent="加購的抽屜比箱子放得下的還多，多出來的會是備用抽屜。確定沒問題再送出。"; }
+  else hint.hidden = true;
+
+  passHTML($("#livePass"), {name: $("#name").value.trim()});
+  const t = totals(), n = lines().reduce((s,l)=>s+l.n,0);
+  $("#dock").hidden = t.sub===0 || !$("#done").hidden;
+  $("#dockCount").textContent = `已選 ${n} 件，含運費`;
+  $("#dockTotal").textContent = nt(t.total);
+}
+
+function setErr(id,msg){ document.querySelector(`.err[data-for="${id}"]`).textContent = msg||""; }
+function validate(){
+  let ok = true, first = null;
+  const need = (id, test, msg) => { const v=$("#"+id).value.trim(); if(!test(v)){ setErr(id,msg); ok=false; first=first||$("#"+id); } else setErr(id,""); };
+  need("name", v=>v.length>=2, "請填收件人姓名。");
+  need("phone", v=>/^09\d{8}$/.test(v.replace(/[\s-]/g,"")), "請填 09 開頭的 10 碼手機號碼。");
+  need("address", v=>v.length>=8, "請填含縣市、區的完整地址。");
+  need("ig", v=>v.replace(/^@/,"").length>=2, "請填 IG 帳號，我們會用它聯絡你。");
+  let msg = "";
+  if(setCount()===0) msg = "請先選至少一個組合。";
+  else if(!ok) msg = "有欄位還沒填好，請看上方紅字。";
+  else if(!$("#agreeNotes").checked || !$("#agreeNoAbandon").checked) msg = "請勾選兩項確認再送出。";
+  $("#formErr").textContent = msg;
+  if(setCount()===0) $("#sets").scrollIntoView({block:"center"});
+  else if(first) first.focus();
+  return !msg;
+}
+
+function orderId(){
+  const d = new Date(), p = n => String(n).padStart(2,"0");
+  return "AB" + p(d.getMonth()+1) + p(d.getDate()) + "-" + p(d.getHours()) + p(d.getMinutes()) + p(d.getSeconds()) + Math.floor(Math.random()*90+10);
+}
+
+async function submit(e){
+  e.preventDefault();
+  if(Date.now() > new Date(CONFIG.DEADLINE).getTime()){ closeShop(); return; }
+  if(!validate()) return;
+  const btn = $("#submit"), t = totals(), id = orderId();
+  const data = {
+    orderId:id, name:$("#name").value.trim(), phone:$("#phone").value.replace(/[\s-]/g,""),
+    address:$("#address").value.trim(), ig:$("#ig").value.trim().replace(/^@/,""), note:$("#note").value.trim(),
+    qty:{...qty}, summary:lines().map(l=>`${l.label} ×${l.n}`).join("；"),
+    subtotal:t.sub, shipping:t.ship, total:t.total
+  };
+  btn.disabled = true; btn.textContent = "送出中…";
+  try{
+    if(CONFIG.ENDPOINT){
+      const res = await fetch(CONFIG.ENDPOINT, {method:"POST", body:JSON.stringify(data)}); // text/plain，Apps Script 不需預檢
+      const txt = await res.text();
+      let ok = res.ok; try{ ok = JSON.parse(txt).ok !== false; }catch(_){}
+      if(!ok) throw new Error("server");
+    }else{
+      $("#demoNote").hidden = false;
+    }
+    showDone(data);
+  }catch(err){
+    $("#formErr").textContent = "訂單沒有送出，可能是網路不穩。請再按一次；還是不行的話，請截圖私訊 IG @smooch_home。";
+    btn.disabled = false; btn.textContent = "送出訂單";
+  }
+}
+
+function showDone(data){
+  passHTML($("#donePass"), {name:data.name, orderId:data.orderId});
+  $("#payTotal").textContent = nt(data.total);
+  const b = CONFIG.BANK, bank = $("#bank");
+  if(b.account){
+    bank.textContent = "";
+    [`${b.name}（${b.code}）`, `帳號 ${b.account}`, b.holder ? `戶名 ${b.holder}` : "", b.note ? `匯款備註請填「${b.note}」` : ""].filter(Boolean).forEach(s => bank.append(el("div",null,s)));
+  }else{
+    bank.textContent = "請私訊 IG @smooch_home 索取匯款帳號。";
+  }
+  $("#done").hidden = false; $("#dock").hidden = true;
+  document.body.style.overflow = "hidden";
+  $("#done").scrollTop = 0;
+}
+
+function closeShop(){
+  $("#shop").hidden = true; $("#closed").hidden = false; $("#dock").hidden = true;
+  $("#clock").textContent = "已收單";
+  $("#orderSub").textContent = "這次團購已在 11/13 23:59 收單。";
+}
+
+function tick(){
+  const left = new Date(CONFIG.DEADLINE).getTime() - Date.now();
+  if(left<=0){ closeShop(); return; }
+  const p = n => String(n).padStart(2,"0");
+  const d = Math.floor(left/864e5), h = Math.floor(left/36e5)%24, m = Math.floor(left/6e4)%60, s = Math.floor(left/1e3)%60;
+  $("#clock").textContent = `距離收單 ${d} 天 ${p(h)}:${p(m)}:${p(s)}`;
+  setTimeout(tick, 1000);
+}
+
+SETS.forEach(s => $("#sets").append(buildItem(s,true)));
+ADDONS.forEach(a => $("#addons").append(buildItem(a,false)));
+if(CONFIG.SIMULATOR_URL){ $("https://ss91705-ai.github.io/galley-cart/").hidden = false; $("#simLink").href = CONFIG.SIMULATOR_URL; }
+$("#form").addEventListener("submit", submit);
+$("#name").addEventListener("input", render);
+render(); tick();
+</script>
+</body>
+</html>
