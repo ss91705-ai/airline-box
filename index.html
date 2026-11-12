@@ -4,164 +4,224 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AIRLINE BOX 航空收納箱團購｜SMOOCH HOME</title>
-<meta name="description" content="SMOOCH HOME 航空收納箱團購，收單至 11/13。三種組合，可加購抽屜、輪子、酒架與飲料架。">
+<meta name="description" content="歡迎搭乘 SMH1111 航班。SMOOCH HOME 航空收納箱團購，收單至 11/13。">
 <meta property="og:title" content="AIRLINE BOX 航空收納箱團購｜SMOOCH HOME">
-<meta property="og:description" content="鋁製航空收納箱，三種團購組合，收單至 11/13。">
+<meta property="og:description" content="歡迎搭乘 SMH1111 航班。鋁製航空收納箱團購，收單至 11/13。">
 <meta property="og:image" content="images/cover.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --alu:#D9D9D9;      /* 封面的鋁灰 */
-  --alu-deep:#9DA1A4; /* 箱體陰影面 */
-  --paper:#F3F3F1;
-  --white:#FFFFFF;
-  --ink:#000000;
-  --mute:#5F6366;
-  --latch:#D4232B;    /* 只用在團購價與必填提示 */
+  --panel:#E3E5E9;     /* 機艙壁板 Silver */
+  --panel-2:#F4F5F7;   /* Cabin white */
+  --alu:#D5D9DE;
+  --bezel:#C9CDD3;     /* 窗框、邊線 */
+  --alu-deep:#A9AFB7;
+  --steel:#8E949C;
+  --seat:#2B3036;      /* Graphite 深色區、主按鈕 */
+  --ink:#1F2328;
+  --white:#fff;
+  --mute:#6B727B;
+  --sign:#7FB2FF;      /* Cabin light 冰藍：指示燈、進度 */
+  --sign-deep:#2F6BD8; /* 冰藍深：焦點框、文字 */
+  --latch:#C8202A;     /* 只用在必填和錯誤 */
+  --metal:linear-gradient(180deg,#FFFFFF,#E6E9ED);
+  --metal-dark:linear-gradient(180deg,#4A5058,#24282D);
   --display:"Anton","Noto Sans TC",sans-serif;
   --body:"Archivo","Noto Sans TC",system-ui,sans-serif;
   --pad:clamp(20px,5vw,64px);
+  --bar:52px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--bar) + 12px)}
+body{margin:0;background:var(--panel);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
 a{color:inherit}
 h1,h2,h3,p{margin:0}
 button{font:inherit;color:inherit;cursor:pointer}
-:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+:focus-visible{outline:3px solid var(--sign-deep);outline-offset:3px}
 .wrap{max-width:1180px;margin:0 auto;padding:0 var(--pad)}
-.band{padding:clamp(56px,9vw,120px) 0}
+.band{padding:clamp(64px,10vw,128px) 0}
 .display{font-family:var(--display);font-weight:400;text-transform:uppercase;line-height:.95;letter-spacing:.005em}
-.h2{font-size:clamp(44px,9vw,104px)}
-.sub{color:var(--mute);font-size:15px;margin-top:10px}
-.head{margin-bottom:clamp(28px,4vw,48px)}
+.h2{font-size:clamp(46px,9vw,104px)}
+.zh{font-size:clamp(20px,2.6vw,26px);font-weight:700;margin-top:10px}
 
-/* ---------- 頂部收單列 ---------- */
-.gate{position:sticky;top:0;z-index:30;background:var(--ink);color:var(--white);font-size:13px}
-.gate .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;height:44px}
-.gate b{font-weight:500}
-.gate .clock{font-variant-numeric:tabular-nums;white-space:nowrap}
-.gate a{text-decoration:none;background:var(--white);color:var(--ink);padding:5px 14px;font-weight:700;white-space:nowrap}
+/* 機艙廣播：每段開頭一句 */
+.pa{display:flex;gap:12px;align-items:flex-start;max-width:36em;margin-top:18px;color:var(--mute)}
+.pa svg{flex:none;width:26px;height:26px;margin-top:1px}
+.dark .pa{color:#B9BCBE}
+.head{margin-bottom:clamp(32px,5vw,56px)}
 
-/* ---------- Hero ---------- */
-.hero{background:var(--alu)}
-.hero-grid{display:grid;grid-template-columns:1fr}
-.hero-art img{width:100%;height:auto}
-.hero-copy{padding:36px var(--pad) 56px;display:flex;flex-direction:column;justify-content:center;gap:22px}
-.hero-copy h1{font-size:clamp(40px,7vw,84px);color:var(--white)}
-.hero-copy p{max-width:30em}
-.fares{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
-.fares li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:12px 0;border-bottom:1px solid rgba(0,0,0,.35)}
-.fares .code{font-family:var(--display);font-size:22px;margin-right:10px}
-.fares s{color:var(--mute);font-size:13px;margin-right:8px}
-.fares strong{font-family:var(--display);font-weight:400;font-size:26px}
-.btn{display:inline-block;background:var(--ink);color:var(--white);border:0;padding:16px 28px;font-weight:700;font-size:16px;text-decoration:none;text-align:center}
-.btn:hover{background:#2b2b2b}
-.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
-.btn.ghost:hover{background:var(--ink);color:var(--white)}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
-@media(min-width:900px){
-  .hero-grid{grid-template-columns:minmax(0,46vw) 1fr;min-height:calc(100vh - 44px)}
-  .hero-art{display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
-  .hero-art img{max-height:calc(100vh - 44px);width:auto}
-  .hero-copy{padding:48px var(--pad) 48px 40px}
-}
+/* ---------- 頂部：指示燈面板＋航線進度 ---------- */
+.overhead{position:sticky;top:0;z-index:30;background:linear-gradient(180deg,#F6F7F9,#D9DDE2);color:var(--ink);box-shadow:0 1px 0 #B9BEC5,inset 0 1px 0 #fff,0 6px 16px rgba(40,50,60,.08)}
+.overhead .wrap{display:flex;align-items:center;gap:14px;height:var(--bar)}
+.sign{display:flex;align-items:center;gap:10px;font-size:13px;min-width:0}
+.sign .lamp{flex:none;width:30px;height:30px;border-radius:50%;background:linear-gradient(180deg,#3A4047,#1E2226);display:grid;place-items:center;box-shadow:0 0 0 1px #A9AFB7,inset 0 1px 0 rgba(255,255,255,.2)}
+.sign .lamp svg{width:20px;height:20px;color:var(--sign);filter:drop-shadow(0 0 4px rgba(127,178,255,.9))}
+.sign .clock{font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.route-top{flex:1;display:none;align-items:center;gap:10px;font-family:var(--display);font-size:15px;letter-spacing:.04em}
+.route-top .line{flex:1;margin:0 12px;height:2px;background:repeating-linear-gradient(90deg,#A9AFB7 0 6px,transparent 6px 11px);position:relative}
+.route-top .fill{position:absolute;left:0;top:0;bottom:0;background:var(--sign);box-shadow:0 0 6px var(--sign);width:0}
+.route-top .plane{position:absolute;top:50%;left:0;width:22px;height:22px;transform:translate(-50%,-50%);color:var(--ink)}
+.overhead .go{margin-left:auto;flex:none;background:var(--metal-dark);color:var(--white);text-decoration:none;font-weight:700;font-size:14px;padding:7px 16px;border-radius:999px;box-shadow:0 0 0 1px #1a1d21,inset 0 1px 0 rgba(255,255,255,.2)}
+.track{height:3px;background:#C9CDD3;position:relative}
+.track i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--sign)}
+@media(min-width:820px){.route-top{display:flex}.track{display:none}}
 
-/* ---------- 情境照 ---------- */
-.reel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--pad) 18px;scrollbar-width:thin}
-.reel img{height:clamp(300px,52vw,560px);width:auto;flex:none;scroll-snap-align:center}
+/* ---------- 機窗 ---------- */
+.window{background:linear-gradient(180deg,#FAFBFC,#D5D9DE);padding:clamp(9px,1.4vw,14px);border-radius:46% / 34%;box-shadow:0 0 0 1px #B9BEC5,inset 0 2px 1px #fff,0 10px 22px rgba(40,50,60,.16)}
+.window .ring{width:100%;height:100%;border-radius:46% / 34%;padding:clamp(7px,1vw,10px);background:linear-gradient(180deg,#C3C8CE,#EEF0F3);box-shadow:inset 0 3px 8px rgba(40,50,60,.32)}
+.window .glass{position:relative;width:100%;height:100%;border-radius:44% / 32%;overflow:hidden;box-shadow:inset 0 0 0 2px #9AA1A9;background:#C9CDD3}
+.window img{width:100%;height:100%;object-fit:cover}
+.window .shade{position:absolute;left:0;right:0;top:0;height:100%;background:linear-gradient(180deg,#E3E6EA 0%,#CDD2D8 92%,#B7BDC4 100%);box-shadow:0 4px 10px rgba(40,50,60,.35);transform:translateY(-4%);transition:transform 1.1s cubic-bezier(.3,.7,.2,1);will-change:transform}
+.window .shade::after{content:"";position:absolute;left:36%;right:36%;bottom:12px;height:6px;border-radius:3px;background:#8E949C;box-shadow:inset 0 1px 1px rgba(0,0,0,.3)}
+.window.open .shade{transform:translateY(-88%)}
+@media(prefers-reduced-motion:reduce){.window .shade{transition:none;transform:translateY(-88%)}}
 
-/* ---------- 尺寸 ---------- */
-.sizes{display:grid;gap:clamp(20px,4vw,48px)}
-.size{background:var(--white)}
-.size img{width:100%;aspect-ratio:1;object-fit:cover}
-.size .info{padding:22px 24px 26px}
-.size .letter{font-family:var(--display);font-size:72px;line-height:.9}
-.size dl{margin:14px 0 0;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-size:15px}
-.size dt{color:var(--mute)}
-.size dd{margin:0}
-@media(min-width:760px){.sizes{grid-template-columns:1fr 1fr}}
+/* ---------- 登機 Hero ---------- */
+.hero{background:linear-gradient(180deg,#F4F5F7,#E3E5E9);padding:clamp(28px,5vw,56px) 0 clamp(56px,8vw,96px)}
+.windows{display:grid;grid-template-columns:1fr;gap:clamp(18px,4vw,56px);max-width:1100px;margin:0 auto;padding:0 var(--pad)}
+.windows .window{aspect-ratio:3/4}
+.windows .window:nth-child(n+2){display:none}
+@media(min-width:820px){.windows{grid-template-columns:repeat(3,1fr)}.windows .window:nth-child(n+2){display:block}}
+@media(max-width:819px){.windows .window{max-width:340px;margin:0 auto;width:78%}}
+.welcome{text-align:center;margin-top:clamp(32px,5vw,56px)}
+.welcome h1{font-size:clamp(56px,12vw,148px)}
+.welcome .zh{margin-top:12px}
+.welcome p.lead{max-width:30em;margin:14px auto 0}
+.flight{display:grid;grid-template-columns:repeat(2,1fr);max-width:760px;margin:clamp(28px,4vw,40px) auto 0;border-top:2px solid var(--ink);text-align:left}
+.flight div{padding:12px 4px;border-bottom:1px solid rgba(0,0,0,.25)}
+.flight small{display:block;color:var(--mute);font-size:12px}
+.flight b{font-family:var(--display);font-weight:400;font-size:clamp(22px,3vw,30px);letter-spacing:.02em}
+@media(min-width:820px){.flight{grid-template-columns:repeat(4,1fr)}}
+.btn{display:inline-block;background:var(--metal-dark);color:var(--white);border:0;border-radius:999px;box-shadow:0 0 0 1px #1a1d21,inset 0 1px 0 rgba(255,255,255,.22),0 4px 12px rgba(40,50,60,.22);padding:16px 28px;font-weight:700;font-size:16px;text-decoration:none;text-align:center}
+.btn:hover{background:linear-gradient(180deg,#5A616A,#2B3036)}
+.btn.light{background:linear-gradient(180deg,#FFFFFF,#C9CDD3);color:var(--ink);box-shadow:0 0 0 1px #A9AFB7,inset 0 1px 0 #fff}
+.btn.light:hover{background:linear-gradient(180deg,#FFFFFF,#DDE0E5)}
+.welcome .btn{margin-top:28px}
 
-.spec{width:100%;border-collapse:collapse;margin-top:clamp(28px,4vw,48px);font-size:15px}
-.spec caption{text-align:left;font-family:var(--display);font-size:28px;text-transform:uppercase;padding-bottom:10px}
-.spec th,.spec td{text-align:left;padding:12px 8px 12px 0;border-top:1px solid rgba(0,0,0,.25);font-weight:400}
-.spec td:last-child{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+/* ---------- 機上生活：窗景 ---------- */
+.reel{display:flex;gap:clamp(18px,3vw,36px);overflow-x:auto;scroll-snap-type:x mandatory;padding:6px var(--pad) 22px;scrollbar-width:thin}
+.reel figure{margin:0;flex:none;width:clamp(240px,30vw,340px);scroll-snap-align:center}
+.reel .window{aspect-ratio:3/4}
+.reel figcaption{text-align:center;font-size:14px;color:var(--mute);padding-top:12px}
 
-/* ---------- 細節 ---------- */
-.alu{background:var(--alu)}
-.details{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+/* ---------- 椅背安全須知卡（尺寸） ---------- */
+.seatback{background:linear-gradient(180deg,#E3E5E9,#D3D7DD);padding:clamp(56px,9vw,112px) 0}
+.card{background:var(--metal);border-radius:18px;max-width:1000px;margin:0 auto;overflow:hidden;box-shadow:0 0 0 1px #B9BEC5,0 24px 50px rgba(40,50,60,.22)}
+.card-top{background:linear-gradient(180deg,#EEF0F3,#CDD1D7);border-bottom:1px solid #B9BEC5;color:var(--ink);display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:16px clamp(20px,3vw,32px)}
+.card-top .display{font-size:clamp(28px,4vw,40px)}
+.card-top span{font-weight:700;font-size:14px}
+.card-body{padding:clamp(20px,3vw,36px)}
+.panes{display:grid;gap:clamp(18px,3vw,28px)}
+@media(min-width:760px){.panes{grid-template-columns:1fr 1fr}}
+.pane{background:var(--white);border:1.5px solid var(--bezel);box-shadow:inset 0 1px 0 #fff;border-radius:12px;padding:18px 20px 20px}
+.pane-head{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.pane-head .letter{font-family:var(--display);font-size:64px;line-height:.9}
+.pane-head b{display:block;font-size:17px}
+.pane-head small{color:var(--mute);font-size:14px}
+.figs{display:flex;gap:16px;align-items:flex-end;justify-content:center;padding:6px 0 14px;border-bottom:1px solid #ddd;margin-bottom:12px;min-height:180px;align-items:center}
+.figs figure{margin:0;text-align:center;font-size:13px;color:var(--mute)}
+.figs svg{display:block;margin:0 auto 6px}
+.rule{display:flex;gap:10px;align-items:flex-start;font-size:15px;margin-top:8px}
+.rule .ok,.rule .no{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:13px;font-weight:700;margin-top:2px}
+.rule .ok{background:var(--sign-deep)}.rule .no{background:var(--latch)}
+.drawers{margin-top:clamp(20px,3vw,28px);background:var(--white);border:1.5px solid var(--bezel);border-radius:12px;padding:16px 20px}
+.drawers h3{font-family:var(--display);font-weight:400;font-size:24px;text-transform:uppercase;margin-bottom:6px}
+.legend{font-size:13px;color:var(--mute);display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.legend i{display:inline-block;width:16px;height:12px;border:1.5px solid #000;border-radius:2px}
+.drawers table{width:100%;border-collapse:collapse;font-size:15px}
+.drawers th,.drawers td{text-align:left;padding:9px 0;border-top:1px solid #ddd;font-weight:400}
+.drawers td{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* ---------- 機上設備 ---------- */
+.details{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .details figure{margin:0}
-.details img{width:100%;aspect-ratio:1;object-fit:cover}
-.details figcaption{padding:10px 0 14px;font-size:14px;line-height:1.5}
+.details img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px;box-shadow:0 0 0 1px var(--bezel)}
+.details figcaption{padding:10px 2px 14px;font-size:14px;line-height:1.5}
 .details b{display:block;font-family:var(--display);font-weight:400;font-size:20px;text-transform:uppercase}
 @media(min-width:900px){.details{grid-template-columns:repeat(4,1fr)}}
-
-.duo{display:grid;gap:clamp(20px,4vw,48px);margin-top:clamp(40px,6vw,80px)}
-.duo figure{margin:0;background:var(--white)}
+.duo{display:grid;gap:clamp(20px,3vw,32px);margin-top:clamp(40px,6vw,72px)}
+.duo figure{margin:0;background:var(--metal);box-shadow:0 0 0 1px var(--bezel);border-radius:16px;overflow:hidden}
 .duo img{width:100%;aspect-ratio:1;object-fit:cover}
-.duo figcaption{padding:20px 24px 24px}
-.duo .name{font-family:var(--display);font-size:34px;text-transform:uppercase;line-height:1}
-.duo .tag{display:inline-block;background:var(--ink);color:var(--white);font-size:12px;font-weight:700;padding:2px 8px;margin-bottom:10px}
+.duo figcaption{padding:18px 22px 22px}
+.duo .name{font-family:var(--display);font-size:32px;text-transform:uppercase;line-height:1}
+.duo .tag{display:inline-block;background:#DCEAFF;color:#1E4C9A;border-radius:999px;padding:2px 10px !important;font-size:12px;font-weight:700;padding:2px 8px;margin-bottom:8px}
 @media(min-width:760px){.duo{grid-template-columns:repeat(3,1fr)}}
+.sim{margin-top:clamp(40px,6vw,72px);background:var(--metal-dark);color:var(--white);border-radius:16px;padding:clamp(24px,4vw,40px);display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+.sim .display{font-size:clamp(28px,4.5vw,46px)}
+.sim[hidden]{display:none}
 
-.sim{margin-top:clamp(40px,6vw,72px);background:var(--ink);color:var(--white);padding:clamp(24px,4vw,44px);display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
-.sim .display{font-size:clamp(28px,4.5vw,48px)}
-.sim .btn{background:var(--white);color:var(--ink)}
-
-/* ---------- 購買前須知 ---------- */
-.notes{background:var(--ink);color:var(--white)}
-.notes .sub{color:#B9BCBE}
+/* ---------- 安全須知（瑕疵說明） ---------- */
+.dark{background:linear-gradient(180deg,#30353B,#22262B);color:var(--white)}
 .marks{display:grid;gap:22px}
-.marks figure{margin:0}
-.marks img{width:100%;aspect-ratio:1;object-fit:cover}
+.marks figure{margin:0;border-top:3px solid var(--sign);padding-top:16px}
+.marks img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px}
 .marks figcaption{padding-top:12px;font-size:15px}
 .marks b{display:block;font-family:var(--display);font-weight:400;font-size:22px;text-transform:uppercase}
 @media(min-width:760px){.marks{grid-template-columns:repeat(3,1fr)}}
 
-/* ---------- 下單 ---------- */
+/* ---------- 機上免稅品 ---------- */
+.dutyfree{background:var(--panel-2)}
+.trolley{display:grid;gap:16px;margin-bottom:clamp(36px,5vw,56px)}
+@media(min-width:820px){.trolley{grid-template-columns:repeat(3,1fr)}}
+.offer{background:var(--metal);border-radius:20px;overflow:hidden;box-shadow:0 0 0 1px var(--bezel),inset 0 1px 0 #fff,0 12px 26px rgba(40,50,60,.12);display:flex;flex-direction:column}
+.offer img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.offer .in{padding:16px 20px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.offer .code{font-family:var(--display);font-size:30px;line-height:1}
+.offer .what{font-weight:500}
+.offer .price{margin-top:auto;padding-top:8px}
+.price s{color:var(--steel);font-size:14px;margin-right:8px}
+.price strong{font-family:var(--display);font-weight:400;font-size:38px;color:var(--ink)}
+.offer .pick{margin-top:12px;width:100%}
+.offer .qty{display:none;margin-top:12px;justify-content:space-between;width:100%}
+.offer .qty button{width:56px;height:52px}
+.offer .qty output{font-size:20px}
+.offer.picked .qty{display:inline-flex}
+.offer.picked .pick{display:none}
+.offer.picked{box-shadow:0 0 0 2px var(--sign-deep),0 0 18px rgba(127,178,255,.5)}
+
 .shop{display:grid;gap:36px;align-items:start}
-@media(min-width:980px){.shop{grid-template-columns:minmax(0,1fr) 380px}.pass-col{position:sticky;top:64px}}
+@media(min-width:980px){.shop{grid-template-columns:minmax(0,1fr) 380px}.pass-col{position:sticky;top:calc(var(--bar) + 20px)}}
 .group-title{font-family:var(--display);font-size:30px;text-transform:uppercase;margin:0 0 6px;font-weight:400}
 .group-note{color:var(--mute);font-size:14px;margin-bottom:14px}
-.item{display:grid;grid-template-columns:92px 1fr;gap:16px;background:var(--white);padding:14px;margin-bottom:10px;align-items:center}
-.item img{width:92px;height:92px;object-fit:cover}
-.item.set{grid-template-columns:120px 1fr}
-.item.set img{width:120px;height:120px}
+.item{display:grid;grid-template-columns:92px 1fr;gap:16px;background:var(--white);box-shadow:0 0 0 1px var(--bezel);border-radius:12px;padding:14px;margin-bottom:10px;align-items:center}
+.item img{width:92px;height:92px;object-fit:cover;border-radius:8px}
+.item.set{grid-template-columns:110px 1fr}
+.item.set img{width:110px;height:110px}
 .item .code{font-family:var(--display);font-size:24px;line-height:1}
 .item .name{font-weight:500;line-height:1.45}
 .item .meta{color:var(--mute);font-size:13px;line-height:1.5}
 .item .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap}
-.price s{color:var(--mute);font-size:13px;margin-right:6px}
-.price strong{font-family:var(--display);font-weight:400;font-size:24px;color:var(--latch)}
-.price.plain strong{color:var(--ink);font-size:20px}
-.qty{display:inline-flex;align-items:center;box-shadow:inset 0 0 0 1.5px var(--ink)}
+.item .price strong{font-size:24px}
+.item .price.plain strong{color:var(--ink);font-size:20px}
+.item.picked{box-shadow:0 0 0 2px var(--sign-deep),0 0 14px rgba(127,178,255,.45)}
+.qty{display:inline-flex;align-items:center;background:var(--metal);box-shadow:0 0 0 1px #A9AFB7,inset 0 1px 0 #fff;border-radius:999px}
 .qty button{width:40px;height:40px;background:none;border:0;font-size:20px;line-height:1}
 .qty button:disabled{opacity:.25;cursor:not-allowed}
 .qty output{min-width:30px;text-align:center;font-variant-numeric:tabular-nums;font-weight:700}
 .item.off{opacity:.5}
-.hint{background:#FFF6D6;padding:10px 14px;font-size:14px;margin:6px 0 14px}
+.hint{background:#E6F0FF;color:#1E4C9A;padding:10px 14px;font-size:14px;margin:6px 0 14px;border-radius:8px}
 .hint[hidden]{display:none}
-
 form .field{margin-bottom:16px}
 label.lbl{display:block;font-weight:500;font-size:14px;margin-bottom:6px}
 label.lbl i{font-style:normal;color:var(--latch)}
-input[type=text],input[type=tel],textarea{width:100%;font:inherit;padding:13px 14px;border:1.5px solid var(--ink);background:var(--white);border-radius:0}
+input:focus,textarea:focus{border-color:var(--sign-deep)!important;box-shadow:0 0 0 3px rgba(127,178,255,.35);outline:none}
+input[type=text],input[type=tel],textarea{width:100%;font:inherit;padding:13px 14px;border:1.5px solid var(--bezel);background:var(--white);border-radius:10px}
 textarea{min-height:84px;resize:vertical}
-.err{color:var(--latch);font-size:13px;margin-top:4px;min-height:0}
-.check{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;background:var(--white);margin-bottom:8px;font-size:15px;cursor:pointer}
-.check input{width:20px;height:20px;margin-top:3px;flex:none;accent-color:#000}
+.err{color:var(--latch);font-size:13px;margin-top:4px}
+.check{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;background:var(--white);box-shadow:0 0 0 1px var(--bezel);border-radius:8px;margin-bottom:8px;font-size:15px;cursor:pointer}
+.check input{width:20px;height:20px;margin-top:3px;flex:none;accent-color:var(--sign-deep)}
 .rules{margin:0 0 20px;padding-left:1.2em;font-size:15px}
 .rules li{margin-bottom:4px}
-.submit{width:100%;font-size:18px;padding:18px}
-.submit:disabled{background:var(--alu-deep);cursor:not-allowed}
+.submit{width:100%;font-size:18px;padding:18px;border-radius:999px}
+.submit:disabled{background:var(--alu-deep);box-shadow:none;cursor:not-allowed}
 .form-err{color:var(--latch);font-weight:500;margin-top:10px}
 
 /* ---------- 登機證 ---------- */
-.pass{background:var(--white);position:relative;filter:drop-shadow(0 10px 24px rgba(0,0,0,.14))}
-.pass-top{background:var(--ink);color:var(--white);padding:14px 20px;display:flex;justify-content:space-between;align-items:baseline}
+.pass{background:var(--white);position:relative;border-radius:14px;box-shadow:0 0 0 1px var(--bezel);filter:drop-shadow(0 10px 24px rgba(0,0,0,.14))}
+.pass-top{background:var(--metal-dark);color:var(--white);padding:14px 20px;display:flex;justify-content:space-between;align-items:baseline;border-radius:14px 14px 0 0}
 .pass-top .display{font-size:26px}
 .pass-top span{font-size:12px}
 .pass-body{padding:18px 20px 6px}
@@ -177,139 +237,161 @@ textarea{min-height:84px;resize:vertical}
 .lines li span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
 .lines .empty{color:var(--mute)}
 .tear{position:relative;border-top:2px dashed var(--alu-deep);margin:0 14px}
-.tear::before,.tear::after{content:"";position:absolute;top:-12px;width:22px;height:22px;border-radius:50%;background:var(--paper)}
+.tear::before,.tear::after{content:"";position:absolute;top:-12px;width:22px;height:22px;border-radius:50%;background:var(--panel-2)}
 .tear::before{left:-26px}.tear::after{right:-26px}
 .pass-total{padding:14px 20px 18px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
 .pass-total small{display:block;color:var(--mute);font-size:12px}
 .pass-total strong{font-family:var(--display);font-weight:400;font-size:40px;line-height:1}
 .barcode{height:44px;width:120px;background:repeating-linear-gradient(90deg,#000 0 2px,transparent 2px 5px,#000 5px 6px,transparent 6px 10px,#000 10px 13px,transparent 13px 15px)}
 
-/* ---------- 完成畫面 ---------- */
-.done{position:fixed;inset:0;z-index:50;background:var(--alu);overflow:auto;padding:28px 16px 60px}
+/* ---------- 降落（完成畫面） ---------- */
+.done{position:fixed;inset:0;z-index:50;background:var(--panel);overflow:auto;padding:28px 16px 60px}
 .done[hidden]{display:none}
 .done-inner{max-width:440px;margin:0 auto}
-.done h2{font-size:clamp(48px,13vw,76px);color:var(--white);margin-bottom:6px}
-.done .pass .tear::before,.done .pass .tear::after{background:var(--alu)}
-.pay{background:var(--white);padding:18px 20px;margin-top:18px;font-size:15px}
+.done h2{font-size:clamp(48px,13vw,76px);margin-bottom:6px}
+.done .pass .tear::before,.done .pass .tear::after{background:var(--panel)}
+.pay{background:var(--white);border-radius:14px;padding:18px 20px;margin-top:18px;font-size:15px}
 .pay h3{font-family:var(--display);font-weight:400;font-size:24px;margin-bottom:6px}
 .pay ol{margin:0;padding-left:1.2em}
-.pay .bank{background:var(--paper);padding:10px 12px;margin:8px 0;font-variant-numeric:tabular-nums}
-.demo{background:#FFF6D6;padding:10px 14px;font-size:14px;margin-bottom:14px}
-.done .btn{width:100%;margin-top:14px}
+.pay .bank{background:var(--panel-2);border-radius:8px;padding:10px 12px;margin:8px 0;font-variant-numeric:tabular-nums}
+.demo{background:#E6F0FF;color:#1E4C9A;padding:10px 14px;font-size:14px;margin-bottom:14px;border-radius:8px}
+.done .btn{width:100%;margin-top:14px;border-radius:999px}
 
-/* ---------- 頁尾 ---------- */
-.lottery{background:var(--alu);padding:clamp(36px,6vw,64px) 0}
-.lottery .display{font-size:clamp(32px,6vw,60px)}
-footer{background:var(--ink);color:var(--white);padding:36px 0 96px;font-size:14px}
+/* ---------- 轉機資訊（三選二） ---------- */
+.connect{background:linear-gradient(180deg,#E3E5E9,#F4F5F7);padding:clamp(56px,8vw,96px) 0}
+.connect .h2{font-size:clamp(40px,7vw,80px)}
+.boards{display:grid;gap:12px;margin-top:24px}
+@media(min-width:760px){.boards{grid-template-columns:1fr 1fr}}
+.board{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;background:var(--metal-dark);color:var(--white);border-radius:16px;padding:18px 22px;text-decoration:none;box-shadow:0 0 0 1px #1a1d21,inset 0 1px 0 rgba(255,255,255,.15)}
+.board:hover{background:linear-gradient(180deg,#5A616A,#2B3036)}
+.board .fno{font-family:var(--display);font-size:24px;color:var(--sign)}
+.board .to{font-weight:700;line-height:1.4}
+.board .to small{display:block;font-weight:400;color:#B9BCBE;font-size:13px}
+.board .st{font-size:13px;border:1px solid #6b7075;border-radius:999px;padding:3px 10px;white-space:nowrap}
+footer{background:#22262B;color:var(--white);padding:36px 0 96px;font-size:14px}
 footer .display{font-size:32px}
 footer a{text-underline-offset:3px}
 
 /* ---------- 手機底部列 ---------- */
-.dock{position:fixed;left:0;right:0;bottom:0;z-index:25;background:var(--white);border-top:2px solid var(--ink);padding:10px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:25;background:linear-gradient(180deg,#FFFFFF,#E6E9ED);border-top:1px solid #B9BEC5;box-shadow:0 -6px 16px rgba(40,50,60,.1);padding:10px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px}
 .dock[hidden]{display:none}
 .dock strong{font-family:var(--display);font-weight:400;font-size:26px}
 .dock small{display:block;color:var(--mute);font-size:12px;line-height:1.2}
-.dock .btn{padding:12px 20px}
+.dock .btn{padding:12px 20px;border-radius:999px}
 @media(min-width:980px){.dock{display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-plane" viewBox="0 0 24 24"><path fill="currentColor" d="M21.5 13.2v-1.6L13.4 7V2.6a1.4 1.4 0 0 0-2.8 0V7l-8.1 4.6v1.6l8.1-2.4v5.1l-2.2 1.6v1.3l3.6-1 3.6 1v-1.3l-2.2-1.6v-5.1z" transform="rotate(90 12 12)"/></symbol>
+  <symbol id="i-chime" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#2B3036"/><path fill="#7FB2FF" d="M12 6.2a1 1 0 0 1 1 1v.5a4.3 4.3 0 0 1 3.3 4.2v2.6l1.2 1.4v.6h-11v-.6l1.2-1.4v-2.6A4.3 4.3 0 0 1 11 7.7v-.5a1 1 0 0 1 1-1zm-1.6 11h3.2a1.6 1.6 0 0 1-3.2 0z"/></symbol>
+  <symbol id="i-belt" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="12" cy="4.2" r="2.2"/><path d="M8.5 7.5h7a1.5 1.5 0 0 1 1.5 1.5v5.5h-2V21h-6v-6.5H7V9a1.5 1.5 0 0 1 1.5-1.5z"/></g><path d="M5 13.5h14" stroke="#1A1C1E" stroke-width="2.4"/><rect x="10.2" y="12" width="3.6" height="3" rx=".6" fill="currentColor" stroke="#1A1C1E" stroke-width=".8"/></symbol>
+</svg>
 
-<div class="gate">
+<div class="overhead">
   <div class="wrap">
-    <span><b>航空收納箱團購</b>　<span class="clock" id="clock">收單至 11/13 23:59</span></span>
-    <a href="#order">我要下單</a>
+    <div class="sign">
+      <span class="lamp"><svg><use href="#i-belt"/></svg></span>
+      <span class="clock" id="clock">收單至 11/13 23:59</span>
+    </div>
+    <div class="route-top" aria-hidden="true">
+      <span>SMH</span>
+      <span class="line"><span class="fill" id="routeDone"></span><svg class="plane" id="routePlane"><use href="#i-plane"/></svg></span>
+      <span>HOME</span>
+    </div>
+    <a class="go" href="#dutyfree">前往免稅品</a>
   </div>
+  <div class="track" aria-hidden="true"><i id="trackDone"></i></div>
 </div>
 
-<header class="hero">
-  <div class="hero-grid">
-    <div class="hero-art"><img src="images/cover.jpg" alt="AIRLINE 航空收納箱，大小兩個尺寸的鋁製收納箱" width="1273" height="1800"></div>
-    <div class="hero-copy">
-      <h1 class="display">Industrial form,<br>everyday storage.</h1>
-      <p>機艙裡的鋁製餐車箱，搬進家裡當邊桌、床頭櫃、香水櫃。抽屜自己配，大尺寸還能加輪子推著走。</p>
-      <ul class="fares">
-        <li><span><span class="code">SET 01</span>小箱＋塑膠抽屜 ×1</span><span><s>NT$3,150</s><strong>2,790</strong></span></li>
-        <li><span><span class="code">SET 02</span>大箱＋塑膠抽屜 ×2</span><span><s>NT$4,730</s><strong>4,290</strong></span></li>
-        <li><span><span class="code">SET 03</span>大箱＋塑膠抽屜 ×2＋輪子</span><span><s>NT$5,480</s><strong>4,990</strong></span></li>
-      </ul>
-      <div class="hero-actions">
-        <a class="btn" href="#order">選組合下單</a>
-        <a class="btn ghost" href="#size">先看尺寸</a>
-      </div>
+<header class="hero" id="boarding">
+  <div class="windows">
+    <div class="window"><div class="ring"><div class="glass"><img src="images/cover.jpg" alt="窗邊的大尺寸航空收納箱" width="941" height="1672"><span class="shade" aria-hidden="true"></span></div></div></div>
+    <div class="window"><div class="ring"><div class="glass"><img src="images/cover.jpg" alt="拉開的鋁製抽屜裡放著香水" loading="lazy"><span class="shade" aria-hidden="true"></span></div></div></div>
+    <div class="window"><div class="ring"><div class="glass"><img src="images/cover.jpg" alt="放在檯面上的小尺寸航空收納箱" loading="lazy"><span class="shade" aria-hidden="true"></span></div></div></div>
+  </div>
+  <div class="welcome wrap">
+    <h1 class="display">Welcome aboard</h1>
+    <p class="zh">歡迎搭乘 SMH1111 航班</p>
+    <p class="lead">這趟航班會帶你認識航空收納箱：從機艙廚房的餐車箱，到你家的邊桌、床頭櫃和香水櫃。</p>
+    <div class="flight">
+      <div><small>航班</small><b>SMH1111</b></div>
+      <div><small>出發</small><b>Galley</b></div>
+      <div><small>抵達</small><b>Your home</b></div>
+      <div><small>關閉登機門</small><b>11.13 23:59</b></div>
     </div>
+    <a class="btn" href="#inflight">開始登機</a>
   </div>
 </header>
 
-<section class="band" aria-label="生活場景">
+<section class="band" id="inflight" style="padding-top:clamp(32px,5vw,64px)">
   <div class="wrap head">
-    <h2 class="display h2">In your space</h2>
-    <p class="sub">關上箱門時，不透光的箱體可以幫香水、化妝品避開陽光直射。</p>
+    <h2 class="display h2">In-flight</h2>
+    <p class="zh">機上生活</p>
+    <p class="pa"><svg><use href="#i-chime"/></svg><span>各位旅客，請看窗外。關上箱門時，不透光的鋁製箱體可以幫香水和化妝品避開陽光直射。</span></p>
   </div>
-  <div class="reel" tabindex="0">
-    <img src="images/desk-1.jpg" alt="大尺寸航空箱放在書桌旁" loading="lazy">
-    <img src="images/blinds-1.jpg" alt="裝上輪子的大尺寸航空箱" loading="lazy">
-    <img src="images/desk-2.jpg" alt="航空箱當作邊桌，上面放著盒子" loading="lazy">
-    <img src="images/perfume-loewe.jpg" alt="鋁製抽屜裡放著香水" loading="lazy">
-    <img src="images/s-stove.jpg" alt="小尺寸航空箱放在檯面上" loading="lazy">
-    <img src="images/drawers-open.jpg" alt="拉開的鋁製小抽屜與塑膠大抽屜" loading="lazy">
-    <img src="images/blinds-2.jpg" alt="從上方看大尺寸航空箱" loading="lazy">
-  </div>
-</section>
-
-<section class="band" id="size" style="padding-top:0">
-  <div class="wrap">
-    <div class="head">
-      <h2 class="display h2">Size guide</h2>
-      <p class="sub">尺寸規格</p>
-    </div>
-    <div class="sizes">
-      <article class="size">
-        <img src="images/s-front.jpg" alt="小號箱" loading="lazy">
-        <div class="info">
-          <div class="letter">S</div>
-          <dl>
-            <dt>尺寸</dt><dd>長 40 × 寬 29 × 高 28 cm</dd>
-            <dt>可放</dt><dd>大抽屜 ×2，或大抽屜 ×1＋小抽屜 ×2</dd>
-            <dt>輪子</dt><dd>不可加裝</dd>
-          </dl>
-        </div>
-      </article>
-      <article class="size">
-        <img src="images/l-top.jpg" alt="大號箱" loading="lazy">
-        <div class="info">
-          <div class="letter">L</div>
-          <dl>
-            <dt>尺寸</dt><dd>長 41.5 × 寬 29 × 高 47 cm</dd>
-            <dt>可放</dt><dd>大抽屜 ×3＋小抽屜 ×1</dd>
-            <dt>輪子</dt><dd>可加裝</dd>
-          </dl>
-        </div>
-      </article>
-    </div>
-    <table class="spec">
-      <caption>Drawers 抽屜</caption>
-      <tr><th>鋁製大抽屜</th><td>37.8 × 27.4 × 10.5 cm</td></tr>
-      <tr><th>鋁製小抽屜</th><td>37.8 × 27.4 × 4.5 cm</td></tr>
-      <tr><th>塑料大抽屜（PP）</th><td>37.8 × 27.4 × 10.5 cm</td></tr>
-    </table>
+  <div class="reel" tabindex="0" aria-label="生活場景照片，可左右滑動">
+    <figure><div class="window"><div class="ring"><div class="glass"><img src="images/desk-1.jpg" alt="" loading="lazy"><span class="shade" aria-hidden="true"></span></div></div></div><figcaption>放在書桌旁</figcaption></figure>
+    <figure><div class="window"><div class="ring"><div class="glass"><img src="images/stack.jpg" alt="" loading="lazy"><span class="shade" aria-hidden="true"></span></div></div></div><figcaption>當作邊桌</figcaption></figure>
+    <figure><div class="window"><div class="ring"><div class="glass"><img src="images/drawers-open.jpg" alt="" loading="lazy"><span class="shade" aria-hidden="true"></span></div></div></div><figcaption>鋁製小抽屜放香水</figcaption></figure>
+    <figure><div class="window"><div class="ring"><div class="glass"><img src="images/wheels-blinds.jpg" alt="" loading="lazy"><span class="shade" aria-hidden="true"></span></div></div></div><figcaption>裝上輪子推著走</figcaption></figure>
+    <figure><div class="window"><div class="ring"><div class="glass"><img src="images/s-front.jpg" alt="" loading="lazy"><span class="shade" aria-hidden="true"></span></div></div></div><figcaption>小尺寸版本</figcaption></figure>
+    <figure><div class="window"><div class="ring"><div class="glass"><img src="images/s-open.jpg" alt="" loading="lazy"><span class="shade" aria-hidden="true"></span></div></div></div><figcaption>小尺寸，打開箱門</figcaption></figure>
   </div>
 </section>
 
-<section class="band alu">
+<section class="seatback" id="size">
+  <div class="wrap">
+    <div class="card">
+      <div class="card-top"><span class="display">Safety card</span><span>尺寸說明｜請放回椅背袋</span></div>
+      <div class="card-body">
+        <div class="panes">
+          <article class="pane">
+            <div class="pane-head"><span class="letter">S</span><div><b>小尺寸</b><small>長 40 × 寬 29 × 高 28 cm</small></div></div>
+            <div class="figs">
+              <figure><svg width="130" height="100" viewBox="0 0 130 100" aria-hidden="true"><rect x="5" y="5" width="120" height="90" rx="8" fill="#fff" stroke="#000" stroke-width="2.5"/><rect x="14" y="13" width="102" height="30" rx="3" fill="#EEF2F5" stroke="#000" stroke-width="1.5"/><rect x="52" y="25.0" width="26" height="6" rx="3" fill="#000"/><rect x="14" y="47" width="102" height="30" rx="3" fill="#D9D9D9" stroke="#000" stroke-width="1.5"/><rect x="52" y="59.0" width="26" height="6" rx="3" fill="#000"/></svg>大抽屜 ×2</figure>
+              <figure><svg width="130" height="100" viewBox="0 0 130 100" aria-hidden="true"><rect x="5" y="5" width="120" height="90" rx="8" fill="#fff" stroke="#000" stroke-width="2.5"/><rect x="14" y="13" width="102" height="30" rx="3" fill="#EEF2F5" stroke="#000" stroke-width="1.5"/><rect x="52" y="25.0" width="26" height="6" rx="3" fill="#000"/><rect x="14" y="47" width="102" height="13" rx="3" fill="#D9D9D9" stroke="#000" stroke-width="1.5"/><rect x="52" y="50.5" width="26" height="6" rx="3" fill="#000"/><rect x="14" y="64" width="102" height="13" rx="3" fill="#D9D9D9" stroke="#000" stroke-width="1.5"/><rect x="52" y="67.5" width="26" height="6" rx="3" fill="#000"/></svg>大抽屜 ×1＋小抽屜 ×2</figure>
+            </div>
+            <div class="rule"><span class="ok">✓</span><span>兩種放法擇一</span></div>
+            <div class="rule"><span class="no">✕</span><span>不能裝輪子</span></div>
+          </article>
+          <article class="pane">
+            <div class="pane-head"><span class="letter">L</span><div><b>大尺寸</b><small>長 41.5 × 寬 29 × 高 47 cm</small></div></div>
+            <div class="figs">
+              <figure><svg width="130" height="166" viewBox="0 0 130 166" aria-hidden="true"><rect x="5" y="5" width="120" height="140" rx="8" fill="#fff" stroke="#000" stroke-width="2.5"/><rect x="14" y="13" width="102" height="29" rx="3" fill="#EEF2F5" stroke="#000" stroke-width="1.5"/><rect x="52" y="24.5" width="26" height="6" rx="3" fill="#000"/><rect x="14" y="46" width="102" height="29" rx="3" fill="#EEF2F5" stroke="#000" stroke-width="1.5"/><rect x="52" y="57.5" width="26" height="6" rx="3" fill="#000"/><rect x="14" y="79" width="102" height="29" rx="3" fill="#D9D9D9" stroke="#000" stroke-width="1.5"/><rect x="52" y="90.5" width="26" height="6" rx="3" fill="#000"/><rect x="14" y="112" width="102" height="13" rx="3" fill="#D9D9D9" stroke="#000" stroke-width="1.5"/><rect x="52" y="115.5" width="26" height="6" rx="3" fill="#000"/><circle cx="26" cy="155" r="9" fill="#2A2D30"/><circle cx="26" cy="155" r="3" fill="#D9D9D9"/><circle cx="104" cy="155" r="9" fill="#2A2D30"/><circle cx="104" cy="155" r="3" fill="#D9D9D9"/></svg>大抽屜 ×3＋小抽屜 ×1</figure>
+            </div>
+            <div class="rule"><span class="ok">✓</span><span>最多放大抽屜 ×3＋小抽屜 ×1</span></div>
+            <div class="rule"><span class="ok">✓</span><span>可以裝輪子</span></div>
+          </article>
+        </div>
+        <div class="drawers">
+          <h3>Drawers 抽屜尺寸</h3>
+          <p class="legend"><i style="background:#EEF2F5"></i>塑料 PP　<i style="background:#D9D9D9"></i>鋁製</p>
+          <table>
+            <tr><th>鋁製大抽屜</th><td>37.8 × 27.4 × 10.5 cm</td></tr>
+            <tr><th>鋁製小抽屜</th><td>37.8 × 27.4 × 4.5 cm</td></tr>
+            <tr><th>塑料大抽屜（PP）</th><td>37.8 × 27.4 × 10.5 cm</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="equipment">
   <div class="wrap">
     <div class="head">
-      <h2 class="display h2">Details</h2>
-      <p class="sub">機能細節</p>
+      <h2 class="display h2">Cabin equipment</h2>
+      <p class="zh">機上設備</p>
+      <p class="pa"><svg><use href="#i-chime"/></svg><span>接下來為您說明箱體的設備位置。</span></p>
     </div>
     <div class="details">
       <figure><img src="images/perfume.jpg" alt="" loading="lazy"><figcaption><b>Flexible storage</b>香水、化妝品與日常物品收納</figcaption></figure>
-      <figure><img src="images/s-open.jpg" alt="" loading="lazy"><figcaption><b>Modular configuration</b>可依需求搭配不同抽屜</figcaption></figure>
+      <figure><img src="images/l-open.jpg" alt="" loading="lazy"><figcaption><b>Modular configuration</b>可依需求搭配不同抽屜</figcaption></figure>
       <figure><img src="images/latch.jpg" alt="" loading="lazy"><figcaption><b>Simple latch</b>簡易鎖扣設計</figcaption></figure>
       <figure><img src="images/plaque.jpg" alt="" loading="lazy"><figcaption><b>Fold-flat handle</b>嵌入式提把</figcaption></figure>
     </div>
-
     <div class="duo">
       <figure>
         <img src="images/caster.jpg" alt="附煞車的靜音萬向輪" loading="lazy">
@@ -324,22 +406,22 @@ footer a{text-underline-offset:3px}
         <figcaption><span class="tag">新品</span><div class="name">Drink holder</div>飲料架。15 格，孔徑 6 cm，大小尺寸都能用。</figcaption>
       </figure>
     </div>
-
     <div class="sim" id="sim" hidden>
       <div>
         <div class="display">今天的推車要放什麼？</div>
         <p>還沒想好抽屜怎麼配，先到模擬器排排看。</p>
       </div>
-      <a class="btn" id="simLink" href="https://ss91705-ai.github.io/galley-cart/" target="_blank" rel="noopener">開啟模擬器</a>
+      <a class="btn light" id="simLink" href="#" target="_blank" rel="noopener">開啟模擬器</a>
     </div>
   </div>
 </section>
 
-<section class="band notes" id="notes">
+<section class="band dark" id="notes">
   <div class="wrap">
     <div class="head">
-      <h2 class="display h2">Please note</h2>
-      <p class="sub">購買前須知｜以下情況不列為商品瑕疵</p>
+      <h2 class="display h2">Before take-off</h2>
+      <p class="zh">起飛前請閱讀｜購買前須知</p>
+      <p class="pa"><svg><use href="#i-chime"/></svg><span>以下三種情況屬於鋁材和製程的特性，不列為商品瑕疵，請在下單前確認可以接受。</span></p>
     </div>
     <div class="marks">
       <figure><img src="images/mark-1.jpg" alt="把手周圍的氧化痕跡" loading="lazy"><figcaption><b>Natural material marks</b>材質特性可能出現局部氧化痕跡，屬正常現象，非瑕疵。</figcaption></figure>
@@ -349,23 +431,22 @@ footer a{text-underline-offset:3px}
   </div>
 </section>
 
-<section class="band" id="order">
+<section class="band dutyfree" id="dutyfree">
   <div class="wrap">
     <div class="head">
-      <h2 class="display h2">Order</h2>
-      <p class="sub" id="orderSub">收單至 11/13（五）23:59。只提供宅配，每筆訂單運費 NT$100。</p>
+      <h2 class="display h2">Duty free</h2>
+      <p class="zh">機上免稅品</p>
+      <p class="pa"><svg><use href="#i-chime"/></svg><span id="orderSub">機上免稅品販售開始。收單至 11/13（五）23:59，只提供宅配，每筆訂單運費 NT$100。</span></p>
     </div>
 
     <div id="closed" class="hint" hidden>這次團購已經收單，謝謝大家。之後的開團消息請追蹤 IG @smooch_home。</div>
 
+    <div class="trolley" id="trolley"></div>
+
     <div class="shop" id="shop">
       <form id="form" novalidate>
-        <h3 class="group-title">選組合</h3>
-        <p class="group-note">每個組合都含箱體和塑膠大抽屜。</p>
-        <div id="sets"></div>
-
-        <h3 class="group-title" style="margin-top:32px">加購</h3>
-        <p class="group-note">先選至少一個組合，才能加購。</p>
+        <h3 class="group-title">單買</h3>
+        <p class="group-note">不搭配組合也可以單獨購買。</p>
         <div id="addons"></div>
         <div class="hint" id="capHint" hidden></div>
 
@@ -397,16 +478,6 @@ footer a{text-underline-offset:3px}
   </div>
 </section>
 
-<section class="lottery">
-  <div class="wrap">
-    <div class="display">三選二，抽好禮</div>
-    <p>雙 11 三個團購頁，在任兩頁下單就自動加入抽獎。</p>
-        <div class="hero-actions" style="margin-top:18px">
-      <a class="btn" href="https://ss91705-ai.github.io/pointiti-xmas/" target="_blank" rel="noopener">POINTITI 聖誕禮盒預購</a>
-      <a class="btn" href="https://ss91705-ai.github.io/magnet-board/" target="_blank" rel="noopener">磁吸板雙 11 組合</a>
-    </div>
-  </div>
-</section>
 
 <footer>
   <div class="wrap">
@@ -423,7 +494,7 @@ footer a{text-underline-offset:3px}
 <div class="done" id="done" hidden role="dialog" aria-modal="true" aria-labelledby="doneTitle">
   <div class="done-inner">
     <div class="demo" id="demoNote" hidden>測試模式：還沒設定訂單接收網址，這筆訂單沒有送出。</div>
-    <h2 class="display" id="doneTitle">Order received</h2>
+    <h2 class="display" id="doneTitle">Landed</h2>
     <p style="margin-bottom:16px">訂單已送出。請截圖這張登機證，匯款後私訊我們。</p>
     <div class="pass" id="donePass"></div>
     <div class="pay">
@@ -437,7 +508,6 @@ footer a{text-underline-offset:3px}
     <a class="btn" href="https://www.instagram.com/smooch_home/" target="_blank" rel="noopener">開啟 IG 私訊 @smooch_home</a>
   </div>
 </div>
-
 <script>
 /* ============================================================
    設定區：要改的東西都在這裡
@@ -447,7 +517,7 @@ const CONFIG = {
   OPEN: "2026-11-11T00:00:00+08:00",     // 開放下單時間
   DEADLINE: "2026-11-13T23:59:59+08:00", // 收單時間
   SHIPPING: 100,                         // 每筆訂單運費
-  SIMULATOR_URL: "",                     // 模擬器網址，留空就不顯示那一塊
+  SIMULATOR_URL: "https://ss91705-ai.github.io/galley-cart/",                     // 模擬器網址，留空就不顯示那一塊
   BANK: { name: "彰化銀行", code: "009", account: "22005113364100", holder: "", note: "團購" } // 銀行名稱、代碼、帳號、戶名；留空會請客人私訊索取
 };
 
@@ -457,10 +527,12 @@ const SETS = [
   { id:"set03", code:"SET 03", name:"大航空箱＋塑膠大抽屜 ×2＋輪子", meta:"L 尺寸，含可煞車萬向輪一組", orig:5480, price:4990, img:"blinds-1", box:"L" }
 ];
 const ADDONS = [
+  { id:"emptyS",  name:"小空箱（無配件）", meta:"S 尺寸　40 × 29 × 28 cm，不含抽屜", price:2560, img:"s-stove", units:0, slots:4 },
+  { id:"emptyL",  name:"大空箱（無配件）", meta:"L 尺寸　41.5 × 29 × 47 cm，不含抽屜", price:3550, img:"blinds-2", units:0, slots:7 },
   { id:"alSmall", name:"小抽屜（鋁製）",   meta:"37.8 × 27.4 × 4.5 cm",  price:600, img:"drawers-open", units:1 },
   { id:"alLarge", name:"大抽屜（鋁製）",   meta:"37.8 × 27.4 × 10.5 cm", price:780, img:"s-open",       units:2 },
   { id:"ppLarge", name:"大抽屜（塑料 PP）", meta:"37.8 × 27.4 × 10.5 cm", price:590, img:"l-open",       units:2 },
-  { id:"wheels",  name:"可煞車萬向輪 1 組", meta:"四顆一組，僅 SET 02 可加（SET 03 已含）", price:750, img:"caster", units:0 },
+  { id:"wheels",  name:"可煞車萬向輪 1 組", meta:"四顆一組，只適用大尺寸箱（SET 03 已含）", price:750, img:"caster", units:0 },
   { id:"wine",    name:"酒架",             meta:"大小尺寸都能用",          price:790, img:"wine-rack",    units:0 },
   { id:"drink",   name:"飲料架",           meta:"15 格，孔徑 6 cm，大小尺寸都能用", price:790, img:"drink-holder", units:0 }
 ];
@@ -496,15 +568,13 @@ function buildItem(p, isSet){
 const setCount = () => SETS.reduce((n,s)=>n+qty[s.id],0);
 function maxOf(id){
   if(SETS.some(s=>s.id===id)) return 20;
-  if(setCount()===0) return 0;
-  if(id==="wheels") return qty.set02;
   return 20;
 }
 
 function lines(){
   const out = [];
   SETS.forEach(s => { if(qty[s.id]) out.push({label:`${s.code} ${s.name}`, n:qty[s.id], sum:qty[s.id]*s.price}); });
-  ADDONS.forEach(a => { if(qty[a.id]) out.push({label:`加購 ${a.name}`, n:qty[a.id], sum:qty[a.id]*a.price}); });
+  ADDONS.forEach(a => { if(qty[a.id]) out.push({label:`單買 ${a.name}`, n:qty[a.id], sum:qty[a.id]*a.price}); });
   return out;
 }
 function totals(){
@@ -524,7 +594,7 @@ function passHTML(target, info){
   const f = el("div","pass-fields");
   const field = (k,v) => { const d=el("div"); d.append(el("small",null,k), el("b",null,v)); return d; };
   f.append(field("旅客", info.name || "—"), field("訂單編號", info.orderId || "送出後產生"),
-           field("航班", "SMH 1113"), field("收單", "11/13 23:59"));
+           field("航班", "SMH1111"), field("收單", "11/13 23:59"));
   const ul = el("ul","lines");
   const ls = lines();
   if(!ls.length){ ul.append(el("li","empty","還沒選組合")); }
@@ -539,21 +609,25 @@ function passHTML(target, info){
 }
 
 function render(){
-  // 加購數量不能超過上限（例如拿掉組合後）
   ADDONS.forEach(a => { qty[a.id] = Math.min(qty[a.id], maxOf(a.id)); });
-  document.querySelectorAll(".item").forEach(box => {
+  document.querySelectorAll("[data-id]").forEach(box => {
     const id = box.dataset.id, max = maxOf(id);
     box.querySelector("output").textContent = qty[id];
-    const [minus, plus] = box.querySelectorAll("button");
+    const [minus, plus] = box.querySelectorAll(".qty button");
     minus.disabled = qty[id]===0; plus.disabled = qty[id]>=max;
     box.classList.toggle("off", max===0);
+    box.classList.toggle("picked", qty[id]>0);
   });
-  // 抽屜容量提醒：小抽屜 1 格、大抽屜 2 格；S 共 4 格（組合已用 2），L 共 7 格（組合已用 4）
-  const free = qty.set01*2 + (qty.set02+qty.set03)*3;
+  // 提醒：小抽屜 1 格、大抽屜 2 格；S 共 4 格（組合已用 2），L 共 7 格（組合已用 4）；空箱全空
+  const boxes = setCount() + qty.emptyS + qty.emptyL;
+  const large = qty.set02 + qty.set03 + qty.emptyL;
+  const free = qty.set01*2 + (qty.set02+qty.set03)*3 + qty.emptyS*4 + qty.emptyL*7;
   const used = ADDONS.reduce((n,a)=>n+qty[a.id]*a.units,0);
+  const notes = [];
+  if(boxes>0 && used>free) notes.push("選的抽屜比箱子放得下的還多，多出來的會是備用抽屜。");
+  if(boxes>0 && qty.wheels>0 && qty.set02+qty.emptyL===0) notes.push(large>0 ? "SET 03 已經含輪子，確定要再買一組嗎？" : "輪子只適用大尺寸箱，小尺寸裝不上。");
   const hint = $("#capHint");
-  if(used>free && setCount()>0){ hint.hidden=false; hint.textContent="加購的抽屜比箱子放得下的還多，多出來的會是備用抽屜。確定沒問題再送出。"; }
-  else hint.hidden = true;
+  hint.hidden = !notes.length; hint.textContent = notes.join(" ") + (notes.length ? " 確定沒問題再送出。" : "");
 
   passHTML($("#livePass"), {name: $("#name").value.trim()});
   const t = totals(), n = lines().reduce((s,l)=>s+l.n,0);
@@ -571,11 +645,12 @@ function validate(){
   need("address", v=>v.length>=8, "請填含縣市、區的完整地址。");
   need("ig", v=>v.replace(/^@/,"").length>=2, "請填 IG 帳號，我們會用它聯絡你。");
   let msg = "";
-  if(setCount()===0) msg = "請先選至少一個組合。";
+  const nothing = lines().length===0;
+  if(nothing) msg = "請先選至少一個組合或商品。";
   else if(!ok) msg = "有欄位還沒填好，請看上方紅字。";
   else if(!$("#agreeNotes").checked || !$("#agreeNoAbandon").checked) msg = "請勾選兩項確認再送出。";
   $("#formErr").textContent = msg;
-  if(setCount()===0) $("#sets").scrollIntoView({block:"center"});
+  if(nothing) $("#trolley").scrollIntoView({block:"start"});
   else if(first) first.focus();
   return !msg;
 }
@@ -630,7 +705,7 @@ function showDone(data){
 }
 
 function closeShop(){
-  $("#shop").hidden = true; $("#closed").hidden = false; $("#dock").hidden = true;
+  $("#shop").hidden = true; $("#trolley").hidden = true; $("#closed").hidden = false; $("#dock").hidden = true;
   $("#clock").textContent = "已收單";
   $("#orderSub").textContent = "這次團購已在 11/13 23:59 收單。";
 }
@@ -644,23 +719,57 @@ function tick(){
   if(left<=0){ closeShop(); return; }
   if(toOpen>0){
     $("#clock").textContent = `距離開放下單 ${fmt(toOpen)}`;
-    $("#orderSub").textContent = "11/11 00:00 開放下單。現在可以先選組合、看金額，時間到再送出。";
+    $("#orderSub").textContent = "免稅品 11/11 00:00 開始販售。現在可以先選組合、看金額，時間到再送出。";
     btn.disabled = true; btn.textContent = "11/11 00:00 開放下單";
   }else{
     $("#clock").textContent = `距離收單 ${fmt(left)}`;
     if(btn.textContent.includes("開放下單")){
-      $("#orderSub").textContent = "收單至 11/13（五）23:59。只提供宅配，每筆訂單運費 NT$100。";
+      $("#orderSub").textContent = "機上免稅品販售開始。收單至 11/13（五）23:59，只提供宅配，每筆訂單運費 NT$100。";
       btn.disabled = false; btn.textContent = "送出訂單";
     }
   }
   setTimeout(tick, 1000);
 }
 
-SETS.forEach(s => $("#sets").append(buildItem(s,true)));
 ADDONS.forEach(a => $("#addons").append(buildItem(a,false)));
-if(CONFIG.SIMULATOR_URL){ $("https://ss91705-ai.github.io/galley-cart/").hidden = false; $("#simLink").href = CONFIG.SIMULATOR_URL; }
+if(CONFIG.SIMULATOR_URL){ $("#sim").hidden = false; $("#simLink").href = CONFIG.SIMULATOR_URL; }
 $("#form").addEventListener("submit", submit);
 $("#name").addEventListener("input", render);
+/* 免稅品推車：三個組合大卡。沒選時是「選這組」，選了之後變成數量加減 */
+SETS.forEach(s => {
+  const c = el("article","offer"); c.dataset.id = s.id;
+  const img = el("img"); img.src = `images/${s.img}.jpg`; img.alt = ""; img.loading = "lazy";
+  const inn = el("div","in");
+  const pr = el("div","price"); pr.append(el("s",null,nt(s.orig)), el("strong",null,nt(s.price)));
+  const b = el("button","btn pick","選這組"); b.type = "button";
+  b.onclick = () => { qty[s.id] = 1; render(); c.querySelector(".qty button:last-child").focus(); };
+  const q = el("div","qty");
+  const minus = el("button",null,"−"); minus.type="button"; minus.setAttribute("aria-label",`減少 ${s.code}`);
+  const plus = el("button",null,"+"); plus.type="button"; plus.setAttribute("aria-label",`增加 ${s.code}`);
+  minus.onclick = () => { qty[s.id] = Math.max(0, qty[s.id]-1); render(); if(!qty[s.id]) b.focus(); };
+  plus.onclick  = () => { qty[s.id] = Math.min(20, qty[s.id]+1); render(); };
+  q.append(minus, el("output",null,"0"), plus);
+  inn.append(el("div","code",s.code), el("div","what",s.name), el("div","meta",s.meta), pr, b, q);
+  c.append(img, inn); $("#trolley").append(c);
+});
+
+/* 航線進度：小飛機從 SMH 飛到 HOME，抵達免稅品區時接近降落 */
+function flightProgress(){
+  const land = $("#dutyfree").offsetTop - innerHeight*0.4;
+  const f = Math.max(0, Math.min(1, scrollY / Math.max(1, land)));
+  const pct = (f*100).toFixed(1) + "%";
+  $("#routeDone").style.width = pct; $("#routePlane").style.left = pct; $("#trackDone").style.width = pct;
+}
+addEventListener("scroll", flightProgress, {passive:true});
+addEventListener("resize", flightProgress);
+flightProgress();
+/* 遮光板：窗戶進入畫面才拉開一次，之後不再監聽 */
+if("IntersectionObserver" in window){
+  const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add("open"); io.unobserve(e.target); } }), {threshold:.45});
+  document.querySelectorAll(".window").forEach(w => io.observe(w));
+}else{
+  document.querySelectorAll(".window").forEach(w => w.classList.add("open"));
+}
 render(); tick();
 </script>
 </body>
