@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AIRLINE BOX 航空收納箱團購｜SMOOCH HOME</title>
-<meta name="description" content="歡迎搭乘 SMH1111 航班。SMOOCH HOME 航空收納箱團購，收單至 11/13。">
+<meta name="description" content="歡迎搭乘 SMH1111 航班。SMOOCH HOME 航空收納箱團購，收單至 11/16。">
 <meta property="og:title" content="AIRLINE BOX 航空收納箱團購｜SMOOCH HOME">
-<meta property="og:description" content="歡迎搭乘 SMH1111 航班。鋁製航空收納箱團購，收單至 11/13。">
+<meta property="og:description" content="歡迎搭乘 SMH1111 航班。鋁製航空收納箱團購，收單至 11/16。">
 <meta property="og:image" content="images/cover.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -293,7 +293,7 @@ footer a{text-underline-offset:3px}
   <div class="wrap">
     <div class="sign">
       <span class="lamp"><svg><use href="#i-belt"/></svg></span>
-      <span class="clock" id="clock">收單至 11/13 23:59</span>
+      <span class="clock" id="clock">收單至 11/16 23:59</span>
     </div>
     <div class="route-top" aria-hidden="true">
       <span>SMH</span>
@@ -319,7 +319,7 @@ footer a{text-underline-offset:3px}
       <div><small>航班</small><b>SMH1111</b></div>
       <div><small>出發</small><b>Galley</b></div>
       <div><small>抵達</small><b>Your home</b></div>
-      <div><small>關閉登機門</small><b>11.13 23:59</b></div>
+      <div><small>關閉登機門</small><b>11.16 23:59</b></div>
     </div>
     <a class="btn" href="#inflight">開始登機</a>
   </div>
@@ -436,7 +436,7 @@ footer a{text-underline-offset:3px}
     <div class="head">
       <h2 class="display h2">Duty free</h2>
       <p class="zh">機上免稅品</p>
-      <p class="pa"><svg><use href="#i-chime"/></svg><span id="orderSub">機上免稅品販售開始。收單至 11/13（五）23:59，只提供宅配，每筆訂單運費 NT$100。</span></p>
+      <p class="pa"><svg><use href="#i-chime"/></svg><span id="orderSub">機上免稅品販售開始。收單至 11/16（一）23:59，只提供宅配，每筆訂單運費 NT$100。</span></p>
     </div>
 
     <div id="closed" class="hint" hidden>這次團購已經收單，謝謝大家。之後的開團消息請追蹤 IG @smooch_home。</div>
@@ -459,7 +459,7 @@ footer a{text-underline-offset:3px}
 
         <h3 class="group-title" style="margin-top:32px">團購須知</h3>
         <ul class="rules">
-          <li>收單至 11/13（五）23:59，收單後統一訂貨。</li>
+          <li>收單至 11/16（一）23:59，收單後統一訂貨。</li>
           <li>只提供宅配，每筆訂單運費 NT$100。</li>
           <li>送出訂單後請完成匯款，並私訊 IG <a href="https://www.instagram.com/smooch_home/" target="_blank" rel="noopener">@smooch_home</a> 告知訂單編號與帳號後五碼。</li>
           <li>團購商品下單後無法取消或更改。</li>
@@ -594,7 +594,7 @@ function passHTML(target, info){
   const f = el("div","pass-fields");
   const field = (k,v) => { const d=el("div"); d.append(el("small",null,k), el("b",null,v)); return d; };
   f.append(field("旅客", info.name || "—"), field("訂單編號", info.orderId || "送出後產生"),
-           field("航班", "SMH1111"), field("收單", "11/13 23:59"));
+           field("航班", "SMH1111"), field("收單", "11/16 23:59"));
   const ul = el("ul","lines");
   const ls = lines();
   if(!ls.length){ ul.append(el("li","empty","還沒選組合")); }
@@ -707,7 +707,7 @@ function showDone(data){
 function closeShop(){
   $("#shop").hidden = true; $("#trolley").hidden = true; $("#closed").hidden = false; $("#dock").hidden = true;
   $("#clock").textContent = "已收單";
-  $("#orderSub").textContent = "這次團購已在 11/13 23:59 收單。";
+  $("#orderSub").textContent = "這次團購已在 11/16 23:59 收單。";
 }
 
 function tick(){
@@ -724,7 +724,7 @@ function tick(){
   }else{
     $("#clock").textContent = `距離收單 ${fmt(left)}`;
     if(btn.textContent.includes("開放下單")){
-      $("#orderSub").textContent = "機上免稅品販售開始。收單至 11/13（五）23:59，只提供宅配，每筆訂單運費 NT$100。";
+      $("#orderSub").textContent = "機上免稅品販售開始。收單至 11/16（一）23:59，只提供宅配，每筆訂單運費 NT$100。";
       btn.disabled = false; btn.textContent = "送出訂單";
     }
   }
